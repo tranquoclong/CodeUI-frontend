@@ -7,11 +7,14 @@ function Creators() {
   const text = query.get("text");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
+  console.log("🚀 ~ file: index.jsx:10 ~ Creators ~ loading:", loading)
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       fetch(
-        `http://localhost:8080/api/users?page=1&perPage=10&name=${text || ""}`,
+        `${process.env.REACT_APP_API_URL}/users?page=1&perPage=10&name=${
+          text || ""
+        }`,
         {
           method: "GET",
         }
@@ -77,7 +80,7 @@ function Creators() {
           "not found"
         )}
       </section>
-      <button className="button button--secondary">Show top 50</button>
+      {/* <button className="button button--secondary">Show top 50</button> */}
     </div>
   );
 }

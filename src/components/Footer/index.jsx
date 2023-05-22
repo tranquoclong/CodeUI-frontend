@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import top from "../../assets/fonts/top-post-badge.svg";
 function Footer() {
   return (
     <footer className="footer">
@@ -14,7 +13,7 @@ function Footer() {
             />
           </Link>
           <p className="description">
-            Universe of UI; Hundreds of Open Source UI elements
+            Code of UI; Hundreds of Open Source UI elements
           </p>
           <Link className="link" to="/terms-and-conditions">
             Terms and conditions
@@ -34,19 +33,6 @@ function Footer() {
             License <b>(Free for personal and commercial use)</b>
           </p>
         </div>
-        <Link
-          to="https://www.producthunt.com/posts/uiverse-io?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-uiverse-io"
-          target="_blank"
-          rel="noreferrer"
-          className="product-hunt"
-        >
-          <img
-            src={top}
-            alt="uiverse.io - Hundreds of open source UI elements | Product Hunt"
-            width={250}
-            height={54}
-          />
-        </Link>
       </div>
     </footer>
   );

@@ -35,7 +35,7 @@ function Detail() {
     <main className="wrapper">
       <button className="button button--secondary button--icon button--back">
         <Link
-          to={`/${postById && postById.status}s`}
+          to={`/${postById && postById.status}`}
           style={{ display: "flex" }}
         >
           <svg
@@ -225,6 +225,7 @@ function Detail() {
                 theme="vs-dark"
                 language="css"
                 defaultValue={postById.css}
+                value={postById.css || cssText}
                 onChange={handleEditorChangeCss}
               />
             </div>
@@ -268,7 +269,7 @@ function Detail() {
                 options={options}
                 theme="vs-dark"
                 language="html"
-                defaultValue={postById.html}
+                value={postById.html || htmlText}
                 onChange={handleEditorChangeHtml}
               />
             </div>

@@ -21,7 +21,7 @@ function Header() {
       async function getAccessToken() {
         await axios({
           method: "GET",
-          url: "http://localhost:8080/api/signIn?code=" + codeParams,
+          url: `${process.env.REACT_APP_API_URL}/signIn?code=` + codeParams,
         }).then((response) => {
           if (response.data) {
             dispatch({
@@ -53,7 +53,7 @@ function Header() {
           className="home-page__heading"
           style={{ fontSize: "26px", margin: 0, padding: 0 }}
         >
-          <span>RED</span>UI
+          <span>CODE</span>UI
         </h1>
       </Link>
       <nav className="navigation">
@@ -110,23 +110,26 @@ function Header() {
           </div>
         </div>
         <div className="buttons">
-          <Link
-            to="/create"
-            className="button button--primary button--icon button--create"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              width={24}
-              height={24}
-            >
-              <path fill="none" d="M0 0h24v24H0z" />
-              <path fill="currentColor" d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z" />
-            </svg>
-            Create
-          </Link>
           {isLogin ? (
             <>
+              <Link
+                to="/create"
+                className="button button--primary button--icon button--create"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    fill="currentColor"
+                    d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                  />
+                </svg>
+                Create
+              </Link>
               <Notification />
               <Menu handleLogout={handleLogout} user={isLogin.user} />
             </>

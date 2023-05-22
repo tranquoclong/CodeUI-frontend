@@ -1,21 +1,13 @@
 import React from "react";
-import top from "../../../../assets/fonts/top-post-badge.svg";
 function Hero() {
   return (
     <div className="home-page__hero">
       <div className="left">
         <a
-          href="https://www.producthunt.com/posts/uiverse-io?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-uiverse-io"
-          target="_blank"
+          href="/"
           rel="noreferrer"
           className="product-hunt"
         >
-          <img
-            src={top}
-            alt="uiverse.io - Hundreds of open source UI elements | Product Hunt"
-            width={250}
-            height={54}
-          />
         </a>
         <h1 className="home-page__heading">
           To make your website just a bit more <span>unique</span>

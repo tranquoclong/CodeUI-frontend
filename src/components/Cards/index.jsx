@@ -30,16 +30,16 @@ function Cards() {
                       __html: `.${"red" + post._id} ` + post.css,
                     }}
                   />
-                  <div className="clickable-wrapper">
-                    <Link to={`/detail/${post._id}`} className="fake-link">
-                      Link to button
-                    </Link>
+                  <Link
+                    to={`/detail/${post._id}`}
+                    className="clickable-wrapper"
+                  >
                     <div
                       id="container"
                       className={`card__button-container ${"red" + post._id}`}
                       dangerouslySetInnerHTML={{ __html: post.html }}
                     ></div>
-                  </div>
+                  </Link>
                 </div>
                 <button type="submit" className="card__bookmark false">
                   <svg

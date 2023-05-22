@@ -1442,6 +1442,7 @@ kbd {
 .detail-page .html-editor {
   align-self: start;
   max-width: 100%;
+  margin-top: 22px;
   overflow-y: hidden;
   border-radius: var(--border-radius);
 }
@@ -3777,7 +3778,7 @@ kbd {
   background: var(--red);
 }
 .info-bar {
-  padding: 10px 0 20px;
+  padding: 10px 0 0;
   text-align: right;
   display: flex;
   align-items: center;
