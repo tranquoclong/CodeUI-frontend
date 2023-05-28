@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Toggle() {
   return (
     <section className="posts-preview">
@@ -11,10 +11,10 @@ function Toggle() {
       <div className="content">
         <article className="card card--switch false false">
           <div className="card-content">
-            <a className="get-html-css" href="/barisdogansutcu/tender-dingo-64">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -22,9 +22,9 @@ function Toggle() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/barisdogansutcu/tender-dingo-64">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pbarisdogansutcu-tender-dingo-64"
@@ -50,10 +50,10 @@ function Toggle() {
         </article>
         <article className="card card--switch false false">
           <div className="card-content">
-            <a className="get-html-css" href="/namecho/quiet-panther-93">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -61,9 +61,9 @@ function Toggle() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/namecho/quiet-panther-93">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pnamecho-quiet-panther-93"
@@ -84,10 +84,10 @@ function Toggle() {
         </article>
         <article className="card card--switch dark-background false">
           <div className="card-content">
-            <a className="get-html-css" href="/mrhyddenn/silly-starfish-53">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -95,9 +95,9 @@ function Toggle() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/mrhyddenn/silly-starfish-53">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pmrhyddenn-silly-starfish-53"
@@ -125,10 +125,10 @@ function Toggle() {
         </article>
         <article className="card card--switch false false">
           <div className="card-content">
-            <a className="get-html-css" href="/Voxybuns/horrible-shrimp-47">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -136,9 +136,9 @@ function Toggle() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/Voxybuns/horrible-shrimp-47">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pVoxybuns-horrible-shrimp-47"

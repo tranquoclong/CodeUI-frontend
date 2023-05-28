@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Cards() {
   return (
     <section className="posts-preview">
@@ -11,17 +11,17 @@ function Cards() {
       <div className="content">
         <article className="card card--card false false">
           <div className="card-content">
-            <a className="get-html-css" href="/adamgiebl/blue-mole-92">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
                   "\n                      .padamgiebl-blue-mole-92 .card {\n                        position: relative;\n                        width: 190px;\n                        height: 254px;\n                        background: lightgrey;\n                        box-shadow: #d11bff42 0 15px 40px -5px;\n                        z-index: 1;\n                        border-radius: 21px;\n                        overflow: hidden;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card__content {\n                        background: linear-gradient(\n                          rgba(255, 255, 255, 0.473),\n                          rgba(150, 150, 150, 0.25)\n                        );\n                        z-index: 1;\n                        backdrop-filter: blur(20px);\n                        -webkit-backdrop-filter: blur(20px);\n                        position: absolute;\n                        left: 0;\n                        top: 0;\n                        width: 100%;\n                        height: 100%;\n                        border-radius: 21px;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob {\n                        position: absolute;\n                        z-index: -1;\n                        border-radius: 5em;\n                        width: 200px;\n                        height: 200px;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(2) {\n                        left: -50px;\n                        top: -90px;\n                        background: #ff930f;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(3) {\n                        left: 110px;\n                        top: -20px;\n                        z-index: -1;\n                        background: #bf0fff;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(4) {\n                        left: -40px;\n                        top: 100px;\n                        background: #ff1b6b;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(5) {\n                        left: 100px;\n                        top: 180px;\n                        background: #0061ff;\n                      }",
               }}
             />
-            <a className="clickable-wrapper" href="/adamgiebl/blue-mole-92">
+            <Link className="clickable-wrapper" to="/">
               <div
                 id="container"
                 className="card__button-container padamgiebl-blue-mole-92"
@@ -34,7 +34,7 @@ function Cards() {
                   <div className="blob" />
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="card__footer">
             <a href="/profile">
@@ -45,17 +45,17 @@ function Cards() {
         </article>
         <article className="card card--card false false">
           <div className="card-content">
-            <a className="get-html-css" href="/alexruix/moody-goose-93">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
                   "\n                      .palexruix-moody-goose-93 .card {\n                        width: 190px;\n                        height: 254px;\n                        padding: 0.8em;\n                        background: #f5f5f5;\n                        position: relative;\n                        overflow: visible;\n                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),\n                          0 1px 2px rgba(0, 0, 0, 0.24);\n                      }\n\n                      .palexruix-moody-goose-93 .card-img {\n                        background-color: #ffcaa6;\n                        height: 40%;\n                        width: 100%;\n                        border-radius: 0.5rem;\n                        transition: 0.3s ease;\n                      }\n\n                      .palexruix-moody-goose-93 .card-info {\n                        padding-top: 10%;\n                      }\n\n                      .palexruix-moody-goose-93 svg {\n                        width: 20px;\n                        height: 20px;\n                      }\n\n                      .palexruix-moody-goose-93 .card-footer {\n                        width: 100%;\n                        display: flex;\n                        justify-content: space-between;\n                        align-items: center;\n                        padding-top: 10px;\n                        border-top: 1px solid #ddd;\n                      }\n\n                      /*Text*/\n                      .palexruix-moody-goose-93 .text-title {\n                        font-weight: 900;\n                        font-size: 1.2em;\n                        line-height: 1.5;\n                      }\n\n                      .palexruix-moody-goose-93 .text-body {\n                        font-size: 0.9em;\n                        padding-bottom: 10px;\n                      }\n\n                      /*Button*/\n                      .palexruix-moody-goose-93 .card-button {\n                        border: 1px solid #252525;\n                        display: flex;\n                        padding: 0.3em;\n                        cursor: pointer;\n                        border-radius: 50px;\n                        transition: 0.3s ease-in-out;\n                      }\n\n                      /*Hover*/\n                      .palexruix-moody-goose-93 .card-img:hover {\n                        transform: translateY(-25%);\n                        box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px,\n                          rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;\n                      }\n\n                      .palexruix-moody-goose-93 .card-button:hover {\n                        border: 1px solid #ffcaa6;\n                        background-color: #ffcaa6;\n                      }",
               }}
             />
-            <a className="clickable-wrapper" href="/alexruix/moody-goose-93">
+            <Link className="clickable-wrapper" to="/">
               <div
                 id="container"
                 className="card__button-container palexruix-moody-goose-93"
@@ -78,7 +78,7 @@ function Cards() {
                   </div>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="card__footer">
             <a href="/profile">
@@ -89,20 +89,17 @@ function Cards() {
         </article>
         <article className="card card--card false false">
           <div className="card-content">
-            <a className="get-html-css" href="/alexmaracinaru/tender-fly-40">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
                   "\n                      .palexmaracinaru-tender-fly-40 .card {\n                        width: 190px;\n                        height: 254px;\n                        background: rgb(183, 226, 25);\n                        font-family: inherit;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .quote {\n                        color: rgb(223, 248, 134);\n                        padding-left: 30px;\n                        position: relative;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .quote:hover {\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .card-name {\n                        text-transform: uppercase;\n                        font-weight: 700;\n                        color: rgb(158, 196, 21);\n                        padding: 35px;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .body-text {\n                        font-size: 20px;\n                        font-weight: 900;\n                        padding: 60px 40px 0;\n                        color: #465512;\n                        position: absolute;\n                        top: 2vw;\n                        left: 1vw;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .author {\n                        margin-top: 5px;\n                        opacity: 0;\n                        transition: 0.5s;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .card:hover .author {\n                        opacity: 1;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .pic {\n                        width: 50px;\n                        height: 50px;\n                        background-color: rgb(158, 196, 21);\n                        border-radius: 50%;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .author-container {\n                        display: flex;\n                        align-items: center;\n                      }\n\n                      .palexmaracinaru-tender-fly-40 .author {\n                        font-weight: 700;\n                        color: rgb(158, 196, 21);\n                        padding-left: 30px;\n                      }",
               }}
             />
-            <a
-              className="clickable-wrapper"
-              href="/alexmaracinaru/tender-fly-40"
-            >
+            <Link className="clickable-wrapper" to="/">
               <div
                 id="container"
                 className="card__button-container palexmaracinaru-tender-fly-40"
@@ -138,7 +135,7 @@ function Cards() {
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
           <div className="card__footer">
             <a href="/profile">
@@ -149,24 +146,24 @@ function Cards() {
         </article>
         <article className="card card--card false false">
           <div className="card-content">
-            <a className="get-html-css" href="/adamgiebl/strong-zebra-87">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
                   "\n                      .padamgiebl-strong-zebra-87 .card {\n                        width: 190px;\n                        height: 254px;\n                        border-radius: 30px;\n                        background: #e0e0e0;\n                        box-shadow: 15px 15px 30px #bebebe,\n                          -15px -15px 30px #ffffff;\n                      }",
               }}
             />
-            <a className="clickable-wrapper" href="/adamgiebl/strong-zebra-87">
+            <Link className="clickable-wrapper" to="/">
               <div
                 id="container"
                 className="card__button-container padamgiebl-strong-zebra-87"
               >
                 <div className="card" />
               </div>
-            </a>
+            </Link>
           </div>
           <div className="card__footer">
             <a href="/profile">

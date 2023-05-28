@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Checkboxes() {
   return (
     <section className="posts-preview">
@@ -11,10 +11,10 @@ function Checkboxes() {
       <div className="content">
         <article className="card card--checkbox false false">
           <div className="card-content">
-            <a className="get-html-css" href="/lenin55/black-dragon-46">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -22,9 +22,9 @@ function Checkboxes() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/lenin55/black-dragon-46">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container plenin55-black-dragon-46"
@@ -45,10 +45,10 @@ function Checkboxes() {
         </article>
         <article className="card card--checkbox false false">
           <div className="card-content">
-            <a className="get-html-css" href="/sssynk/tall-octopus-55">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -56,9 +56,9 @@ function Checkboxes() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/sssynk/tall-octopus-55">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container psssynk-tall-octopus-55"
@@ -79,10 +79,10 @@ function Checkboxes() {
         </article>
         <article className="card card--checkbox false false">
           <div className="card-content">
-            <a className="get-html-css" href="/cssbuttons-io/short-shrimp-54">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -90,9 +90,9 @@ function Checkboxes() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/cssbuttons-io/short-shrimp-54">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pcssbuttons-io-short-shrimp-54"
@@ -118,10 +118,10 @@ function Checkboxes() {
         </article>
         <article className="card card--checkbox false false">
           <div className="card-content">
-            <a className="get-html-css" href="/martinval9/wise-elephant-23">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -129,9 +129,9 @@ function Checkboxes() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/martinval9/wise-elephant-23">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pmartinval9-wise-elephant-23"

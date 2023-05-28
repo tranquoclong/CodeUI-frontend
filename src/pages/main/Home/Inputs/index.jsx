@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 function Inputs() {
   return (
     <section className="posts-preview">
@@ -11,10 +11,10 @@ function Inputs() {
       <div className="content">
         <article className="card card--input dark-background false">
           <div className="card-content">
-            <a className="get-html-css" href="/liyaxu123/warm-eel-62">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -22,9 +22,9 @@ function Inputs() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/liyaxu123/warm-eel-62">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pliyaxu123-warm-eel-62"
@@ -54,10 +54,10 @@ function Inputs() {
         </article>
         <article className="card card--input false false">
           <div className="card-content">
-            <a className="get-html-css" href="/alexruix/jolly-emu-80">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -65,9 +65,9 @@ function Inputs() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/alexruix/jolly-emu-80">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container palexruix-jolly-emu-80"
@@ -95,10 +95,10 @@ function Inputs() {
         </article>
         <article className="card card--input false false">
           <div className="card-content">
-            <a className="get-html-css" href="/TimTrayler/orange-bat-25">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -106,9 +106,9 @@ function Inputs() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/TimTrayler/orange-bat-25">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container pTimTrayler-orange-bat-25"
@@ -176,10 +176,10 @@ function Inputs() {
         </article>
         <article className="card card--input false false">
           <div className="card-content">
-            <a className="get-html-css" href="/alexruix/slippery-frog-10">
+            <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
               <span className="css">CSS</span>
-            </a>
+            </Link>
             <style
               dangerouslySetInnerHTML={{
                 __html:
@@ -187,9 +187,9 @@ function Inputs() {
               }}
             />
             <div className="clickable-wrapper">
-              <a className="fake-link" href="/alexruix/slippery-frog-10">
+              <Link className="fake-link" to="/">
                 Link to button
-              </a>
+              </Link>
               <div
                 id="container"
                 className="card__button-container palexruix-slippery-frog-10"
