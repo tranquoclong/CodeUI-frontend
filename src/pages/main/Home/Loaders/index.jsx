@@ -31,10 +31,10 @@ function Loaders() {
             </a>
           </div>
           <div className="card__footer">
-            <a href="/profile/alexruix">
-              <span className="card__nickname text-color">alexruix</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">3.5K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--spinner false false">
@@ -66,10 +66,10 @@ function Loaders() {
             </a>
           </div>
           <div className="card__footer">
-            <a href="/profile/AqFox">
-              <span className="card__nickname text-color">AqFox</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">5.7K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--spinner false false">
@@ -111,10 +111,10 @@ function Loaders() {
             </a>
           </div>
           <div className="card__footer">
-            <a href="/profile/mobinkakei">
-              <span className="card__nickname text-color">mobinkakei</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">4.8K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--spinner false false">
@@ -142,12 +142,10 @@ function Loaders() {
             </a>
           </div>
           <div className="card__footer">
-            <a href="/profile/satyamchaudharydev">
-              <span className="card__nickname text-color">
-                satyamchaudharydev
-              </span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">3.5K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
       </div>

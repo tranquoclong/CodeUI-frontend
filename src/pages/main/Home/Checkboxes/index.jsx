@@ -37,10 +37,10 @@ function Checkboxes() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/lenin55">
-              <span className="card__nickname text-color">lenin55</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">2K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--checkbox false false">
@@ -71,10 +71,10 @@ function Checkboxes() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/sssynk">
-              <span className="card__nickname text-color">sssynk</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">2.4K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--checkbox false false">
@@ -110,10 +110,10 @@ function Checkboxes() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/cssbuttons-io">
-              <span className="card__nickname text-color">cssbuttons-io</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">10K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--checkbox false false">
@@ -144,10 +144,10 @@ function Checkboxes() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/martinval9">
-              <span className="card__nickname text-color">martinval9</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">4K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
       </div>

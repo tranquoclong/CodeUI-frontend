@@ -5,14 +5,14 @@ import Checkboxes from "./Checkboxes";
 import Hero from "./Hero";
 import Inputs from "./Inputs";
 import Loaders from "./Loaders";
-import Stat from "./Stat";
+// import Stat from "./Stat";
 import Toggle from "./Toggle";
 
 function Home() {
   return (
     <div className="home-page">
       <Hero />
-      <Stat />
+      {/* <Stat /> */}
       <Buttons />
       <Loaders />
       <Checkboxes />

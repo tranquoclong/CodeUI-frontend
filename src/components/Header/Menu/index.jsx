@@ -50,7 +50,7 @@ function Menu({ handleLogout, user }) {
           </li>
           <li className="list-item">
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfbaOoGw82eXhX1la80_NM-P9Pv0lzxE1nUF85lp89s7G7vOw/viewform?usp=sf_link"
+              href="/"
               className="item"
               target="_blank"
               rel="noreferrer"
@@ -72,7 +72,7 @@ function Menu({ handleLogout, user }) {
           </li>
           <li className="list-item">
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLSd1TTrJmPFg739ttyqEhK3tr3NGH1tHUX9Usg1NnNlHdXA7SQ/viewform?usp=sf_link"
+              href="/"
               className="item item--help"
               target="_blank"
               rel="noreferrer"

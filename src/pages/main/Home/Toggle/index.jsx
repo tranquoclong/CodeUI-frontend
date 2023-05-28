@@ -42,10 +42,10 @@ function Toggle() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/barisdogansutcu">
-              <span className="card__nickname text-color">barisdogansutcu</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">7.7K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--switch false false">
@@ -76,10 +76,10 @@ function Toggle() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/namecho">
-              <span className="card__nickname text-color">namecho</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">6.9K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--switch dark-background false">
@@ -117,10 +117,10 @@ function Toggle() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/mrhyddenn">
-              <span className="card__nickname text-color">mrhyddenn</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">3K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
         <article className="card card--switch false false">
@@ -151,10 +151,10 @@ function Toggle() {
             </div>
           </div>
           <div className="card__footer">
-            <a href="/profile/Voxybuns">
-              <span className="card__nickname text-color">Voxybuns</span>
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
             </a>
-            <div className="card__views">7.9K views</div>
+            <div className="card__views">1000K views</div>
           </div>
         </article>
       </div>
