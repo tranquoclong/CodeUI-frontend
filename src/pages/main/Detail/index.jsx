@@ -2,13 +2,14 @@ import React from "react";
 import { useState } from "react";
 import Editor from "@monaco-editor/react";
 import { useIsHidden } from "../../../hooks/useIsHidden";
-import { Link, useParams } from "react-router-dom";
+import { Link, useHistory, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostById } from "../../../store/actions/post.action";
 
 function Detail() {
   const { postId } = useParams();
+  const history = useHistory();
   const dispatch = useDispatch();
   const { postById } = useSelector((state) => state.post);
   const { hidden, handleClick } = useIsHidden();
@@ -34,10 +35,7 @@ function Detail() {
   return (
     <main className="wrapper">
       <button className="button button--secondary button--icon button--back">
-        <Link
-          to={`/${postById && postById.status}`}
-          style={{ display: "flex" }}
-        >
+        <Link to={history} style={{ display: "flex" }}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
