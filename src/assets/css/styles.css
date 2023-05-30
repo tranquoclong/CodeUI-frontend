@@ -7,6 +7,15 @@
   --rt-color-info: #337ab7;
   --rt-opacity: 0.9;
 }
+*::-webkit-scrollbar-thumb {
+    background-color: #9c9c9c;
+    border-radius: .3125rem;
+    border: 0 none #ffffff;
+}
+*::-webkit-scrollbar {
+    width: .5rem;
+    height: .5rem;
+}
 .styles-module_tooltip__mnnfp {
   visibility: hidden;
   width: max-content;

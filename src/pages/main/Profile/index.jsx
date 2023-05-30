@@ -49,7 +49,7 @@ function Profile() {
               alt={users.login}
             />
             <aside>
-              <h1 className="name">{users.name}</h1>
+              <h1 className="profile-name">{users.name}</h1>
               <h2 className="username">{users.login}</h2>
               <div className="bio">{users.bio}</div>
               <div className="details">
