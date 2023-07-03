@@ -6,6 +6,15 @@ import { useHistory } from "react-router-dom";
 import { Post } from "../../../store/actions/post.action";
 import { OPEN_MODAL } from "../../../store/constants/modal.const";
 import PostStatusModal from "../../../components/Modal/postStatusModal";
+import { defaultButtonHTML, defaultCardHTML, defaultCheckboxHTML, defaultInputHTML, defaultSpinnerHTML, defaultSwitchHTML } from "./defaultHTML";
+import {
+  defaultButtonCSS,
+  defaultCardCSS,
+  defaultCheckboxCSS,
+  defaultInputCSS,
+  defaultSpinnerCSS,
+  defaultSwitchCSS,
+} from "./defaultCSS";
 
 function Create() {
   const dispatch = useDispatch();
@@ -13,8 +22,8 @@ function Create() {
   const { hidden, handleClick } = useIsHidden();
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
-  const { status } = useSelector((state) => state.modal);
-  console.log("🚀 ~ file: index.jsx:17 ~ Create ~ status", status);
+  const { type } = useSelector((state) => state.modal);
+  console.log("🚀 ~ file: index.jsx:26 ~ Create ~ type:", type)
   useEffect(
     () => {
       dispatch({
@@ -25,6 +34,42 @@ function Create() {
     // eslint-disable-next-line
     []
   );
+  useEffect(
+    () => {
+      switch (type) {
+        case "button":
+          setHtmlText(defaultButtonHTML);
+          setCssText(defaultButtonCSS);
+          break;
+        case "switch":
+          setHtmlText(defaultSwitchHTML);
+          setCssText(defaultSwitchCSS);
+          break;
+        case "checkbox":
+          setHtmlText(defaultCheckboxHTML);
+          setCssText(defaultCheckboxCSS);
+          break;
+        case "card":
+          setHtmlText(defaultCardHTML);
+          setCssText(defaultCardCSS);
+          break;
+        case "spinner":
+          setHtmlText(defaultSpinnerHTML);
+          setCssText(defaultSpinnerCSS);
+          break;
+        case "input":
+          setHtmlText(defaultInputHTML);
+          setCssText(defaultInputCSS);
+          break;
+        default:
+          setHtmlText(defaultButtonHTML);
+          setCssText(defaultButtonCSS);
+          break;
+      }
+    },
+    // eslint-disable-next-line
+    [type]
+  );
   function handleEditorChangeCss(value, event) {
     setCssText(value);
   }
@@ -33,7 +78,7 @@ function Create() {
   }
   const options = { fontSize: 17 };
   const clickSubmit = () => {
-    dispatch(Post(htmlText, cssText, hidden, status, history));
+    dispatch(Post(htmlText, cssText, hidden, type, history));
   };
   return (
     <main className="wrapper detail-page create-page">
@@ -73,7 +118,7 @@ function Create() {
             options={options}
             theme="vs-dark"
             language="css"
-            defaultValue="button {}"
+            value={cssText}
             onChange={handleEditorChangeCss}
           />
         </div>
@@ -126,7 +171,7 @@ function Create() {
             options={options}
             theme="vs-dark"
             language="html"
-            defaultValue="<button >Button</button>"
+            value={htmlText}
             onChange={handleEditorChangeHtml}
           />
         </div>

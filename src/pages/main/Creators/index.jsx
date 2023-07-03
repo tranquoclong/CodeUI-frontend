@@ -7,7 +7,6 @@ function Creators() {
   const text = query.get("text");
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(false);
-  console.log("🚀 ~ file: index.jsx:10 ~ Creators ~ loading:", loading)
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);

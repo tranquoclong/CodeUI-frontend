@@ -11,50 +11,65 @@ function Sidebar({ history }) {
       <div className="sticky-wrapper">
         <nav className="navigation-categories">
           <Link
-            className={`tab tab--all ${isActive(history, "/all")}`}
-            to="/all"
+            className={`tab tab--all ${isActive(history, "/elements/all")}`}
+            to="/elements/all"
           >
             <div className="tab-content">All</div>
           </Link>
           <Link
-            className={`tab tab--button ${isActive(history, "/button")}`}
-            to="/button"
+            className={`tab tab--button ${isActive(
+              history,
+              "/elements/button"
+            )}`}
+            to="/elements/button"
           >
             <div className="tab-content">Buttons</div>
           </Link>
           <Link
-            className={`tab tab--checkbox ${isActive(history, "/checkbox")}`}
-            to="/checkbox"
+            className={`tab tab--checkbox ${isActive(
+              history,
+              "/elements/checkbox"
+            )}`}
+            to="/elements/checkbox"
           >
             <div className="tab-content">Checkboxes</div>
           </Link>
           <Link
-            className={`tab tab--switch ${isActive(history, "/switch")}`}
-            to="/switch"
+            className={`tab tab--switch ${isActive(
+              history,
+              "/elements/switch"
+            )}`}
+            to="/elements/switch"
           >
             <div className="tab-content">Toggle switches</div>
           </Link>
           <Link
-            className={`tab tab--card ${isActive(history, "/card")}`}
-            to="/card"
+            className={`tab tab--card ${isActive(history, "/elements/card")}`}
+            to="/elements/card"
           >
             <div className="tab-content">Cards</div>
           </Link>
           <Link
-            className={`tab tab--spinner ${isActive(history, "/spinner")}`}
-            to="/spinner"
+            className={`tab tab--spinner ${isActive(
+              history,
+              "/elements/spinner"
+            )}`}
+            to="/elements/spinner"
           >
             <div className="tab-content">Loaders</div>
           </Link>
           <Link
-            className={`tab tab--input ${isActive(history, "/input")}`}
-            to="/input"
+            className={`tab tab--input ${isActive(history, "/elements/input")}`}
+            to="/elements/input"
           >
             <div className="tab-content">Inputs</div>
           </Link>
           <Link
-            className={`tab tab--favorites ${isActive(history, "/favorites")}`}
-            to="/favorites"
+            className={`tab tab--favorites ${isActive(
+              history,
+              "/elements/favorites"
+            )}`}
+            to="/elements/favorites"
           >
             <div className="tab-content">
               <svg

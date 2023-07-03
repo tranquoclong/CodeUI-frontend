@@ -1,12 +1,14 @@
-import React from "react";
+import React from 'react'
+import { useParams } from "react-router-dom";
 import Cards from "../../../components/Cards";
-function All() {
+function Element() {
+  let { element } = useParams();
   return (
     <main className="category-page">
       <div className="category-hero">
-        <h1 className="category-title">Browse all</h1>
+        <h1 className="category-title">Browse {element}</h1>
         <p className="category-description">
-          Open-Source buttons made with HTML and CSS
+          Open-Source {element} made with HTML and CSS
         </p>
       </div>
       <div className="filters-container">
@@ -186,9 +188,9 @@ function All() {
           </div>
         </div>
       </div>
-      <Cards />
+      <Cards element={element} />
     </main>
   );
 }
 
-export default All;
+export default Element

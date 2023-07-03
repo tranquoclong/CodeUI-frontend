@@ -1,13 +1,13 @@
 import React from "react";
-import { useIsDropdown } from "../../../hooks/useIsDropdown";
+import { useDetectOutsideClick } from "../../../hooks/useOutsideClick";
 
 function Notification() {
-  const { dropdown, handleClick } = useIsDropdown();
+  const { dropdownRef, onClick, isActive } = useDetectOutsideClick();
   return (
     <div className="dropdown-container header-dropdown-menu dropdown-notifications">
       <button
         className="button button--secondary button--notifications false"
-        onClick={handleClick}
+        onClick={onClick}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -23,8 +23,9 @@ function Notification() {
         </svg>
       </button>
       <div
+        ref={dropdownRef}
         className={`dropdown-menu notifications ${
-          dropdown ? "open" : "closed"
+          isActive ? "open" : "closed"
         }`}
       >
         <span className="notifications__heading">Notifications</span>

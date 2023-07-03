@@ -4,16 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { getPost } from "../../store/actions/post.action";
 
-function Cards() {
-  const pathname = window.location.pathname.slice(1);
+function Cards({ element }) {
   const dispatch = useDispatch();
   const { post } = useSelector((state) => state.post);
   useEffect(
     () => {
-      dispatch(getPost(pathname));
+      dispatch(getPost(element));
     },
     // eslint-disable-next-line
-    [pathname]
+    [element]
   );
   return (
     post && (
@@ -27,7 +26,7 @@ function Cards() {
                 <div className="card-content">
                   <style
                     dangerouslySetInnerHTML={{
-                      __html: `.${"red" + post._id} ` + post.css,
+                      __html: `.ui${post._id} {${post.css}} `,
                     }}
                   />
                   <Link
@@ -36,7 +35,7 @@ function Cards() {
                   >
                     <div
                       id="container"
-                      className={`card__button-container ${"red" + post._id}`}
+                      className={`card__button-container ${"ui" + post._id}`}
                       dangerouslySetInnerHTML={{ __html: post.html }}
                     ></div>
                   </Link>

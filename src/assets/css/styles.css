@@ -8,13 +8,14 @@
   --rt-opacity: 0.9;
 }
 *::-webkit-scrollbar-thumb {
-    background-color: #9c9c9c;
+    background-color: #2f3031;
     border-radius: .3125rem;
     border: 0 none #ffffff;
 }
 *::-webkit-scrollbar {
     width: .5rem;
     height: .5rem;
+    background-color: #474848;
 }
 .styles-module_tooltip__mnnfp {
   visibility: hidden;
@@ -170,6 +171,16 @@ body {
   filter: grayscale(1);
   opacity: 0.7;
   cursor: default;
+}
+.button--notifications {
+  background: var(--darkred);
+  color: #fff;
+  font-weight: var(--semibold);
+  transition: all 0.3s;
+  border: 2px solid var(--darkred);
+}
+.button--notifications:hover {
+  background: var(--darkred-hover);
 }
 .button--primary {
   background: var(--blue);

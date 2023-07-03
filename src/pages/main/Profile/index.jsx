@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import planet from "../../../assets/images/planet.png";
-import timeLine from "../../../assets/images/time-line-PMHJPPX3.svg";
+import timeLineYellow from "../../../assets/images/time-line-yellow.svg";
+import timeLineRed from "../../../assets/images/time-line-red.svg";
 import { useIsLogin } from "../../../hooks/useIsLogin";
 import { postsByUser } from "../../../store/actions/post.action";
 import { actLogout, getUser } from "../../../store/actions/user.action";
@@ -11,7 +12,9 @@ function Profile() {
   const dispatch = useDispatch();
   const { isLogin } = useIsLogin();
   const { users } = useSelector((state) => state.user);
-  const [listPost, setListPost] = useState([]);
+  const [postApproved, setPostApproved] = useState([]);
+  const [postReview, setPostReview] = useState([]);
+  const [postRejected, setPostRejected] = useState([]);
   const [totalPages, setTotalPages] = useState(0);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -21,8 +24,12 @@ function Profile() {
       dispatch(
         postsByUser(
           login,
-          listPost,
-          setListPost,
+          postApproved,
+          postReview,
+          postRejected,
+          setPostApproved,
+          setPostReview,
+          setPostRejected,
           setLoading,
           page,
           setTotalPages
@@ -32,6 +39,7 @@ function Profile() {
     // eslint-disable-next-line
     [login]
   );
+
   function handleLogout(e) {
     e.preventDefault();
     dispatch(actLogout());
@@ -140,15 +148,15 @@ function Profile() {
               )}
             </aside>
           </section>
-          {listPost.length > 0 ? (
+          {postRejected.length > 0 && (
             <section className="content">
               <h3 className="posts-title">
-                <img className="tag-icon" src={timeLine} alt="" />
-                <span className="title">review</span>
-                <span className="subtitle">waiting for review</span>
+                <img className="tag-icon" src={timeLineRed} alt="" />
+                <span className="title">Rejected</span>
+                <span className="subtitle">check the guidelines</span>
               </h3>
               <div className="cards-container">
-                {listPost.map((post, index) => (
+                {postRejected.map((post, index) => (
                   <article
                     className={`card card--button ${
                       post.theme === "dark" && "dark-background"
@@ -207,16 +215,145 @@ function Profile() {
                 </div>
               )}
             </section>
-          ) : (
-            <article className="no-posts-card">
-              <div className="no-posts-card__content">
-                <div className="image-container">
-                  <img className="image" src={planet} alt="" />
-                </div>
-                <h3 className="heading">not found</h3>
-                <p className="paragraph" />
+          )}
+          {postReview.length > 0 && (
+            <section className="content">
+              <h3 className="posts-title">
+                <img className="tag-icon" src={timeLineYellow} alt="" />
+                <span className="title">Review</span>
+                <span className="subtitle">waiting for review</span>
+              </h3>
+              <div className="cards-container">
+                {postReview.map((post, index) => (
+                  <article
+                    className={`card card--button ${
+                      post.theme === "dark" && "dark-background"
+                    }`}
+                    key={index}
+                  >
+                    <div className="card-content">
+                      <Link to={`/detail/${post._id}`} className="get-html-css">
+                        Get <span className="html">HTML</span> &amp;{" "}
+                        <span className="css">CSS</span>
+                      </Link>
+                      <Link
+                        to={`/detail/${post._id}`}
+                        className="clickable-wrapper"
+                      >
+                        <style
+                          dangerouslySetInnerHTML={{
+                            __html: `.${"red" + post._id} ` + post.css,
+                          }}
+                        />
+                        <div
+                          id="container"
+                          className={`card__button-container ${
+                            "red" + post._id
+                          }`}
+                          dangerouslySetInnerHTML={{ __html: post.html }}
+                        ></div>
+                      </Link>
+                    </div>
+                    <div className="card__footer">
+                      <div className="card__views">1 views</div>
+                    </div>
+                  </article>
+                ))}
               </div>
-            </article>
+              {totalPages === page && (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <button
+                    className="button button--primary button--icon button--create"
+                    onClick={() => setPage(page + 1)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      height={24}
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path
+                        fill="currentColor"
+                        d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                      />
+                    </svg>
+                    {loading ? "Load..." : "Load More"}
+                  </button>
+                </div>
+              )}
+            </section>
+          )}
+          {postApproved.length > 0 && (
+            <section className="content">
+              <h3 className="posts-title">
+                {/* <img className="tag-icon" src={timeLineYellow} alt="" /> */}
+                <span className="title">Approved</span>
+                {/* <span className="subtitle">waiting for review</span> */}
+              </h3>
+              <div className="cards-container">
+                {postApproved.map((post, index) => (
+                  <article
+                    className={`card card--button ${
+                      post.theme === "dark" && "dark-background"
+                    }`}
+                    key={index}
+                  >
+                    <div className="card-content">
+                      <Link to={`/detail/${post._id}`} className="get-html-css">
+                        Get <span className="html">HTML</span> &amp;{" "}
+                        <span className="css">CSS</span>
+                      </Link>
+                      <Link
+                        to={`/detail/${post._id}`}
+                        className="clickable-wrapper"
+                      >
+                        <style
+                          // dangerouslySetInnerHTML={{
+                          //   __html: `.${"ui" + post._id} ` + post.css,
+                          // }}
+                          dangerouslySetInnerHTML={{
+                            __html: `.ui${post._id} {${post.css}} `,
+                          }}
+                        />
+                        <div
+                          id="container"
+                          className={`card__button-container ${
+                            "ui" + post._id
+                          }`}
+                          dangerouslySetInnerHTML={{ __html: post.html }}
+                        ></div>
+                      </Link>
+                    </div>
+                    <div className="card__footer">
+                      <div className="card__views">1 views</div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+              {totalPages === page && (
+                <div style={{ display: "flex", justifyContent: "center" }}>
+                  <button
+                    className="button button--primary button--icon button--create"
+                    onClick={() => setPage(page + 1)}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      height={24}
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path
+                        fill="currentColor"
+                        d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"
+                      />
+                    </svg>
+                    {loading ? "Load..." : "Load More"}
+                  </button>
+                </div>
+              )}
+            </section>
           )}
         </>
       )}

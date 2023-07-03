@@ -70,7 +70,7 @@ function Header() {
             className={`hover-underline-animation browse-link ${
               history !== "/" && history !== "/creators" ? "active" : "false"
             }`}
-            to="/all"
+            to="/elements/all"
           >
             Browse
           </Link>

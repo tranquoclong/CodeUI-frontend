@@ -7,7 +7,7 @@ import {
 const initialState = {
   isOpen: false,
   content: null,
-  status: "button",
+  type: "button",
 };
 export const modalReducer = (state = initialState, action) => {
   const { type, payload } = action;
@@ -26,7 +26,7 @@ export const modalReducer = (state = initialState, action) => {
     case MODAL_STATUS:
       return {
         ...state,
-        status: payload,
+        type: payload,
       };
     default:
       return state;

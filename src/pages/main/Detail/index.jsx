@@ -6,12 +6,15 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostById } from "../../../store/actions/post.action";
+import { useIsLogin } from "../../../hooks/useIsLogin";
+import { deletePost, updatePost } from "./../../../store/actions/post.action";
 
 function Detail() {
   const { postId } = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
   const { postById } = useSelector((state) => state.post);
+  const { isLogin } = useIsLogin();
   const { hidden, handleClick } = useIsHidden();
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
@@ -31,6 +34,12 @@ function Detail() {
   function handleEditorChangeHtml(value, event) {
     setHtmlText(value);
   }
+  const onDeletePost = () => {
+    dispatch(deletePost(postId, history));
+  };
+  const onUpdatePost = () => {
+      dispatch(updatePost(postId, postById, htmlText, cssText, hidden, history));
+};
   const options = { fontSize: 17, emptySelectionClipboard: true };
   return (
     <main className="wrapper">
@@ -67,9 +76,9 @@ function Detail() {
                         : "dark-preview"
                     }`
                   : `${
-                      postById.theme !== "dark"
-                        ? "light-preview"
-                        : "dark-preview"
+                      postById.theme === "dark"
+                        ? "dark-preview"
+                        : "light-preview"
                     }`
               }`}
             >
@@ -231,6 +240,53 @@ function Detail() {
                 onChange={handleEditorChangeCss}
               />
             </div>
+            {postById.postedBy._id === isLogin.user._id && (
+              <div className="controls">
+                <div className="user-controls">
+                  <div className="errors" />
+                  <div className="buttons">
+                    <button
+                      className="button button--notifications button--icon"
+                      onClick={onDeletePost}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        class="h-5 w-5"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          fill="currentColor"
+                          d="M17 6h5v2h-2v13a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V8H2V6h5V3a1 1 0 0 1 1-1h8a1 1 0 0 1 1 1v3zm1 2H6v12h12V8zm-9 3h2v6H9v-6zm4 0h2v6h-2v-6zM9 4v2h6V4H9z"
+                        ></path>
+                      </svg>
+                      Delete
+                    </button>
+                    <button
+                      className="button button--primary button--icon button--rotated"
+                      onClick={onUpdatePost}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        width="24"
+                        height="24"
+                        class="h-5 w-5 false"
+                      >
+                        <path fill="none" d="M0 0h24v24H0z"></path>
+                        <path
+                          fill="currentColor"
+                          d="M5.463 4.433A9.961 9.961 0 0 1 12 2c5.523 0 10 4.477 10 10 0 2.136-.67 4.116-1.81 5.74L17 12h3A8 8 0 0 0 6.46 6.228l-.997-1.795zm13.074 15.134A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12c0-2.136.67-4.116 1.81-5.74L7 12H4a8 8 0 0 0 13.54 5.772l.997 1.795z"
+                        ></path>
+                      </svg>
+                      Update
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
           </section>
           <section className="html-editor">
             <span className="editor-label editor-label--html">

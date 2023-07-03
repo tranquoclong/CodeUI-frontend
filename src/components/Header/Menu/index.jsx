@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useIsDropdown } from "../../../hooks/useIsDropdown";
+import { useDetectOutsideClick } from "../../../hooks/useOutsideClick";
 
 function Menu({ handleLogout, user }) {
-  const { dropdown, handleClick } = useIsDropdown();
+  const { dropdownRef, onClick, isActive } = useDetectOutsideClick();
   return (
     <div className="dropdown-container header-dropdown-menu">
       <button
         className="button button--secondary button--profile false"
-        onClick={handleClick}
+        onClick={onClick}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,7 +29,10 @@ function Menu({ handleLogout, user }) {
           className="profile-picture"
         />
       </button>
-      <nav className={`dropdown-menu ${dropdown ? "open" : "closed"}`}>
+      <nav
+        ref={dropdownRef}
+        className={`dropdown-menu ${isActive ? "open" : "closed"}`}
+      >
         <ul>
           <li className="list-item">
             <Link className="item" to={`/profile/${user.login}`}>
@@ -49,12 +52,7 @@ function Menu({ handleLogout, user }) {
             </Link>
           </li>
           <li className="list-item">
-            <a
-              href="/"
-              className="item"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="/" className="item" target="_blank" rel="noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"

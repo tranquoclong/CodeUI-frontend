@@ -5,10 +5,12 @@ import {
   POST_BY_ID_FAILED,
   POST_BY_ID_SUCCESS,
 } from "../constants/post.const";
+import { toast } from "react-toastify";
 
-const API_URL = process.env.REACT_APP_API_URL;
+// const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "http://localhost:8080/api";
 
-export const Post = (html, css, hidden, status, history) => {
+export const Post = (html, css, hidden, type, history) => {
   const userLogin = localStorage.getItem("userLogin");
   const login = userLogin ? JSON.parse(userLogin).user.login : "";
   const token = userLogin ? JSON.parse(userLogin).token : "";
@@ -24,23 +26,28 @@ export const Post = (html, css, hidden, status, history) => {
         html,
         css,
         theme: hidden ? "dark" : "light",
-        status,
+        type,
       },
     })
       .then((res) => {
         history.goBack("/");
-        console.log("post was add successfully");
+        toast.success("successfully!");
       })
       .catch((err) => {
         console.error(err);
+        toast.error("error!");
       });
   };
 };
 
 export const postsByUser = (
   login,
-  listPost,
-  setListPost,
+  postApproved,
+  postReview,
+  postRejected,
+  setPostApproved,
+  setPostReview,
+  setPostRejected,
   setLoading,
   page,
   setTotalPages
@@ -50,14 +57,46 @@ export const postsByUser = (
   return (dispatch) => {
     axios({
       method: "GET",
-      url: `${API_URL}/post/by/${login}?page=${page}&perPage=12`,
+      url: `${API_URL}/postApproved/by/${login}?page=${page}&perPage=4`,
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${token}`,
       },
     })
       .then((res) => {
-        setListPost([...listPost, ...res.data.list]);
+        setPostApproved([...postApproved, ...res.data.posts]);
+        setLoading(false);
+        setTotalPages(res.data.totalPage);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    axios({
+      method: "GET",
+      url: `${API_URL}/postReview/by/${login}?page=${page}&perPage=4`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        setPostReview([...postReview, ...res.data.posts]);
+        setLoading(false);
+        setTotalPages(res.data.totalPage);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+    axios({
+      method: "GET",
+      url: `${API_URL}/postRejected/by/${login}?page=${page}&perPage=4`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        setPostRejected([...postRejected, ...res.data.posts]);
         setLoading(false);
         setTotalPages(res.data.totalPage);
       })
@@ -67,15 +106,14 @@ export const postsByUser = (
   };
 };
 
-export const getPost = (pathname) => {
+export const getPost = (element) => {
   return (dispatch) => {
     axios({
       method: "GET",
-      url: `${API_URL}/posts?status=${pathname}`,
+      url: `${API_URL}/posts?type=${element}`,
       headers: {
         "Content-Type": "application/json",
       },
-      data: null,
     })
       .then((res) => {
         dispatch(getPostSuccess(res.data));
@@ -108,7 +146,6 @@ export const getPostById = (postId) => {
       headers: {
         "Content-Type": "application/json",
       },
-      data: null,
     })
       .then((res) => {
         dispatch(getPostByIdSuccess(res.data));
@@ -130,5 +167,69 @@ const getPostByIdFailed = (err) => {
   return {
     type: POST_BY_ID_FAILED,
     payload: err,
+  };
+};
+
+export const deletePost = (postId, history) => {
+  const userLogin = localStorage.getItem("userLogin");
+  const token = userLogin ? JSON.parse(userLogin).token : "";
+  return (dispatch) => {
+    axios({
+      method: "DELETE",
+      url: `${API_URL}/post/${postId}`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        history.goBack("/");
+        toast.success("successfully!");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("error!");
+      });
+  };
+};
+
+export const updatePost = (
+  postId,
+  postById,
+  htmlText,
+  cssText,
+  hidden,
+  history
+) => {
+  const userLogin = localStorage.getItem("userLogin");
+  const token = userLogin ? JSON.parse(userLogin).token : "";
+  return (dispatch) => {
+    axios({
+      method: "PUT",
+      url: `${API_URL}/post/${postId}`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      data: {
+        html: htmlText === "" ? postById.html : htmlText,
+        css: cssText === "" ? postById.css : cssText,
+        theme: hidden
+          ? postById.theme === "dark"
+            ? "light"
+            : "dark"
+          : postById.theme === "dark"
+          ? "dark"
+          : "light",
+      },
+    })
+      .then((res) => {
+        history.goBack("/");
+        toast.success("successfully!");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("error!");
+      });
   };
 };

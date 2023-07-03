@@ -4,7 +4,8 @@ import RouterMainTemplate from "./templates/main";
 import RouterAdminTemplate from "./templates/admin";
 import { ModalContainer } from "./components/Modal";
 import RouterAllTemplate from "./templates/All";
-// import "react-notifications/lib/notifications.css";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const renderMainRouter = () => {
@@ -52,6 +53,7 @@ function App() {
           {renderAllRouter()}
         </Switch>
         <ModalContainer />
+        <ToastContainer />
       </BrowserRouter>
     </div>
   );

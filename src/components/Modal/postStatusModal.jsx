@@ -4,14 +4,14 @@ import { CLOSE_MODAL, MODAL_STATUS } from "../../store/constants/modal.const";
 
 function PostStatusModal() {
   const dispatch = useDispatch();
-  const [status, setStatus] = useState("button");
+  const [type, setType] = useState("button");
   const changeStatus = (e) => {
-    setStatus(e.target.value);
+    setType(e.target.value);
   };
   const submit = () => {
     dispatch({
       type: MODAL_STATUS,
-      payload: status,
+      payload: type,
     });
     dispatch({
       type: CLOSE_MODAL,
@@ -21,13 +21,13 @@ function PostStatusModal() {
     <div className="options-modal">
       <h3 className="heading">What are you making?</h3>
       <div className="options">
-        <label className={`option ${status === "button" ? "active" : "false"}`}>
+        <label className={`option ${type === "button" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="button"
             value="button"
-            checked={status === "button"}
+            checked={type === "button"}
             onChange={changeStatus}
           />
           <svg
@@ -43,13 +43,13 @@ function PostStatusModal() {
           </svg>
           <span className="option-label">Button</span>
         </label>
-        <label className={`option ${status === "switch" ? "active" : "false"}`}>
+        <label className={`option ${type === "switch" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="switch"
             value="switch"
-            checked={status === "switch"}
+            checked={type === "switch"}
             onChange={changeStatus}
           />
           <svg
@@ -64,15 +64,13 @@ function PostStatusModal() {
           </svg>
           <span className="option-label">Toggle switch</span>
         </label>
-        <label
-          className={`option ${status === "checkbox" ? "active" : "false"}`}
-        >
+        <label className={`option ${type === "checkbox" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="checkbox"
             value="checkbox"
-            checked={status === "checkbox"}
+            checked={type === "checkbox"}
             onChange={changeStatus}
           />
           <svg
@@ -90,13 +88,13 @@ function PostStatusModal() {
           </svg>
           <span className="option-label">Checkbox</span>
         </label>
-        <label className={`option ${status === "card" ? "active" : "false"}`}>
+        <label className={`option ${type === "card" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="card"
             value="card"
-            checked={status === "card"}
+            checked={type === "card"}
             onChange={changeStatus}
           />
           <svg
@@ -119,15 +117,13 @@ function PostStatusModal() {
           </svg>
           <span className="option-label">Card</span>
         </label>
-        <label
-          className={`option ${status === "spinner" ? "active" : "false"}`}
-        >
+        <label className={`option ${type === "spinner" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="spinner"
             value="spinner"
-            checked={status === "spinner"}
+            checked={type === "spinner"}
             onChange={changeStatus}
           />
           <svg
@@ -144,13 +140,13 @@ function PostStatusModal() {
           </svg>
           <span className="option-label">Loader</span>
         </label>
-        <label className={`option ${status === "input" ? "active" : "false"}`}>
+        <label className={`option ${type === "input" ? "active" : "false"}`}>
           <input
             type="radio"
             name="option"
             id="input"
             value="input"
-            checked={status === "input"}
+            checked={type === "input"}
             onChange={changeStatus}
           />
           <svg
