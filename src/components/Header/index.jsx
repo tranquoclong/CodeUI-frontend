@@ -6,6 +6,7 @@ import { useIsLogin } from "../../hooks/useIsLogin";
 import { actLogout } from "../../store/actions/user.action";
 import { LOGIN_SUCCESS } from "../../store/constants/user.const";
 import Menu from "./Menu";
+import logo from "../../assets/images/logo.png";
 import Notification from "./Notifications/index";
 
 function Header() {
@@ -53,7 +54,8 @@ function Header() {
           className="home-page__heading"
           style={{ fontSize: "26px", margin: 0, padding: 0 }}
         >
-          <span>CODE</span>UI
+          {/* <span>CODE</span>UI */}
+          <img src={logo} alt="logo" />
         </h1>
       </Link>
       <nav className="navigation">

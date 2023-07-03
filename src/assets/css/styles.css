@@ -3307,7 +3307,10 @@ kbd {
   text-align: left;
   color: var(--offwhite);
   padding-bottom: 18px;
-  max-width: 550px;
+  max-width: 200px;
+}
+.home-page__heading img{
+ width: 100%;
 }
 .home-page__heading span {
   background: var(--gradient-lighter);
