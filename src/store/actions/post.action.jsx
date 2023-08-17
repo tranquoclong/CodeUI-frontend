@@ -10,10 +10,7 @@ import {
 import { toast } from "react-toastify";
 
 const API_URL = process.env.REACT_APP_API_URL;
-<<<<<<< HEAD
 // const API_URL = "http://localhost:8080/api";
-=======
->>>>>>> aa7649437182a9ffd00b02c4f16c59470a454a70
 
 export const Post = (html, css, hidden, type, history) => {
   const userLogin = localStorage.getItem("userLogin");
