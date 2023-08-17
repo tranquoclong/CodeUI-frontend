@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import { ACT_LOGOUT, USER_FAILED, USER_SUCCESS } from "../constants/user.const";
 const API_URL = process.env.REACT_APP_API_URL;
 export function actLogout() {
@@ -37,5 +38,29 @@ const getUserFailed = (err) => {
   return {
     type: USER_FAILED,
     payload: err,
+  };
+};
+
+export const favorite = (findFavorite, postId, check, setCheck) => {
+  const userLogin = localStorage.getItem("userLogin");
+  const token = userLogin ? JSON.parse(userLogin).token : "";
+  return () => {
+    axios({
+      method: "PUT",
+      url: `${API_URL}/user/${findFavorite ? "unFavorite" : "favorite"}`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      data: { postId },
+    })
+      .then((res) => {
+        toast.success("successfully!");
+        setCheck(!check);
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("error!");
+      });
   };
 };

@@ -2,6 +2,8 @@ import axios from "axios";
 import {
   POST_FAILED,
   POST_SUCCESS,
+  POST_FAVORITE_FAILED,
+  POST_FAVORITE_SUCCESS,
   POST_BY_ID_FAILED,
   POST_BY_ID_SUCCESS,
 } from "../constants/post.const";
@@ -137,6 +139,43 @@ const getPostFailed = (err) => {
     payload: err,
   };
 };
+
+export const getFavoritePost = () => {
+  const userLogin = localStorage.getItem("userLogin");
+  const token = userLogin ? JSON.parse(userLogin).token : "";
+  const login = userLogin ? JSON.parse(userLogin).user.login : "";
+  return (dispatch) => {
+    axios({
+      method: "GET",
+      url: `${API_URL}/getFavorite/${login}`,
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        dispatch(getFavoritePostSuccess(res.data));
+      })
+      .catch((err) => {
+        dispatch(getFavoritePostFailed(err));
+      });
+  };
+};
+
+export const getFavoritePostSuccess = (favoritePost) => {
+  return {
+    type: POST_FAVORITE_SUCCESS,
+    payload: favoritePost,
+  };
+};
+
+const getFavoritePostFailed = (err) => {
+  return {
+    type: POST_FAVORITE_FAILED,
+    payload: err,
+  };
+};
+
 
 export const getPostById = (postId) => {
   return (dispatch) => {

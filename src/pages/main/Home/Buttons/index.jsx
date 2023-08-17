@@ -160,7 +160,10 @@ function Buttons() {
           </div>
         </article>
       </div>
-      <a className="button button--secondary see-more-button" href="/buttons">
+      <a
+        className="button button--secondary see-more-button"
+        href="/elements/button"
+      >
         See all buttons
       </a>
     </section>

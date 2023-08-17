@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getPostById } from "../../../store/actions/post.action";
 import { useIsLogin } from "../../../hooks/useIsLogin";
 import { deletePost, updatePost } from "./../../../store/actions/post.action";
+import { favorite } from "../../../store/actions/user.action";
+import axios from "axios";
 
 function Detail() {
   const { postId } = useParams();
@@ -16,6 +18,8 @@ function Detail() {
   const { postById } = useSelector((state) => state.post);
   const { isLogin } = useIsLogin();
   const { hidden, handleClick } = useIsHidden();
+  const [check, setCheck] = useState(false);
+  const [findFavorite, setFindFavorite] = useState(null);
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
   const [copyCss, setCopyCss] = useState(false);
@@ -28,6 +32,28 @@ function Detail() {
     // eslint-disable-next-line
     [postId]
   );
+  useEffect(
+      () => {
+      isLogin &&
+        axios({
+          method: "POST",
+          url: `${process.env.REACT_APP_API_URL}/user/findFavorite/${isLogin.user.login}`,
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${isLogin.token}`,
+          },
+          data: { postId },
+        })
+          .then((res) => {
+            setFindFavorite(res.data);
+          })
+          .catch((err) => {
+            console.error(err);
+          });
+    },
+    // eslint-disable-next-line
+    [postId,check]
+  );
   function handleEditorChangeCss(value, event) {
     setCssText(value);
   }
@@ -39,7 +65,10 @@ function Detail() {
   };
   const onUpdatePost = () => {
       dispatch(updatePost(postId, postById, htmlText, cssText, hidden, history));
-};
+  };
+  const onFavorite = () => {
+    dispatch(favorite(findFavorite, postId,check,setCheck));
+  };
   const options = { fontSize: 17, emptySelectionClipboard: true };
   return (
     <main className="wrapper">
@@ -122,7 +151,7 @@ function Detail() {
             </div>
             <div className="info-bar">
               <div className="left">
-                <Link
+                {/* <Link
                   to={`/${postById && postById.status}s`}
                   className="twitter-share-button"
                   target="_blank"
@@ -142,28 +171,28 @@ function Detail() {
                     />
                   </svg>
                   Tweet
-                </Link>
-                <input
-                  type="hidden"
-                  name="postId"
-                  defaultValue="3df4db0a-a415-48b7-8b08-4b2549cad54a"
-                />
-                <input type="hidden" name="action" defaultValue="save" />
-                <button type="submit" className="add-to-favorites false">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    width={24}
-                    height={24}
+                </Link> */}
+                {findFavorite && (
+                  <button
+                    type="submit"
+                    className="add-to-favorites"
+                    onClick={onFavorite}
                   >
-                    <path fill="none" d="M0 0h24v24H0z" />
-                    <path
-                      fill="currentColor"
-                      d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z"
-                    />
-                  </svg>{" "}
-                  <span>Add to favorites</span>
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      width={24}
+                      height={24}
+                    >
+                      <path fill="none" d="M0 0h24v24H0z" />
+                      <path
+                        fill="currentColor"
+                        d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z"
+                      />
+                    </svg>{" "}
+                    <span> {findFavorite ? "Delete" : "Add"} to favorites</span>
+                  </button>
+                )}
               </div>
               <div className="right">
                 <span className="date">
@@ -240,7 +269,7 @@ function Detail() {
                 onChange={handleEditorChangeCss}
               />
             </div>
-            {postById.postedBy._id === isLogin.user._id && (
+            {postById.postedBy._id === isLogin?.user?._id && (
               <div className="controls">
                 <div className="user-controls">
                   <div className="errors" />

@@ -2,37 +2,41 @@ import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getPost } from "../../store/actions/post.action";
+import { getPost, getFavoritePost } from "../../store/actions/post.action";
 
 function Cards({ element }) {
   const dispatch = useDispatch();
-  const { post } = useSelector((state) => state.post);
+  const { post, favoritePost } = useSelector((state) => state.post);
   useEffect(
     () => {
-      dispatch(getPost(element));
+      dispatch(element === "favorites" ? getFavoritePost() : getPost(element));
     },
     // eslint-disable-next-line
     [element]
   );
   return (
-    post && (
       <section className="cards-container cards-container--all">
-        {post.list.length > 0
-          ? post.list.map((post, index) => (
+        {(element === "favorites"
+          ? favoritePost?.list?.length
+          : post?.list?.length) > 0
+          ? (element === "favorites"
+              ? favoritePost.list
+              : post.list
+            ).map((post, index) => (
               <article
                 className="card card--checkbox dark-background false"
                 key={index}
               >
                 <div className="card-content">
-                  <style
-                    dangerouslySetInnerHTML={{
-                      __html: `.ui${post._id} {${post.css}} `,
-                    }}
-                  />
                   <Link
                     to={`/detail/${post._id}`}
                     className="clickable-wrapper"
                   >
+                    <style
+                      dangerouslySetInnerHTML={{
+                        __html: `.ui${post._id} {${post.css}} `,
+                      }}
+                    />
                     <div
                       id="container"
                       className={`card__button-container ${"ui" + post._id}`}
@@ -67,7 +71,6 @@ function Cards({ element }) {
             ))
           : "not found"}
       </section>
-    )
   );
 }
 

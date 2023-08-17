@@ -158,7 +158,10 @@ function Toggle() {
           </div>
         </article>
       </div>
-      <a className="button button--secondary see-more-button" href="/switches">
+      <a
+        className="button button--secondary see-more-button"
+        href="/elements/switch"
+      >
         See all toggle switches
       </a>
     </section>

@@ -115,17 +115,17 @@ body {
   --toastify-text-color-light: var(--maindark);
   --gradient: linear-gradient(
     141deg,
-    rgba(191, 102, 255, 1) 0%,
-    rgba(98, 72, 255, 1) 50%,
-    rgba(0, 221, 235, 1) 100%
+    #03001e 0%,
+    #7303c0 50%,
+    #ec38bc 100%
   );
   --toastify-color-progress-light: var(--gradient);
   --toastify-color-dark: var(--dark);
   --gradient-lighter: linear-gradient(
     141deg,
-    rgb(200, 124, 255) 0%,
-    rgb(116, 92, 252) 50%,
-    rgb(63, 241, 253) 100%
+    #03001e 0%,
+    #7303c0 50%,
+    #ec38bc 100%
   );
   --toastify-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
@@ -193,13 +193,13 @@ body {
   background: var(--blue-hover);
 }
 .button--create {
-  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  background: linear-gradient(144deg, #03001e, #7303c0 50%, #ec38bc);
   border: none;
   height: 46px;
   padding: 0 25px 0 15px;
 }
 .button--create:hover {
-  background: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  background: linear-gradient(144deg, #03001e, #7303c0 50%, #ec38bc);
 }
 .button--secondary {
   border: 2px solid var(--maindark);

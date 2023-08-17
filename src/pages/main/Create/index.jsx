@@ -126,7 +126,7 @@ function Create() {
           <div className="user-controls">
             <div className="errors" />
             <div className="buttons">
-              <button className="button button--secondary button--icon">
+              {/* <button className="button button--secondary button--icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -140,7 +140,7 @@ function Create() {
                   />
                 </svg>
                 Save as a draft
-              </button>
+              </button> */}
               <button
                 className="button button--primary button--icon button--rotated"
                 onClick={clickSubmit}

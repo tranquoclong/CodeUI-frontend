@@ -51,7 +51,7 @@ function Menu({ handleLogout, user }) {
               <span>Profile</span>
             </Link>
           </li>
-          <li className="list-item">
+          {/* <li className="list-item">
             <a href="/" className="item" target="_blank" rel="noreferrer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,7 +67,7 @@ function Menu({ handleLogout, user }) {
               </svg>
               <span>Send feedback</span>
             </a>
-          </li>
+          </li> */}
           <li className="list-item">
             <a
               href="/"

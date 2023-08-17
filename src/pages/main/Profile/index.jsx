@@ -174,13 +174,13 @@ function Profile() {
                       >
                         <style
                           dangerouslySetInnerHTML={{
-                            __html: `.${"red" + post._id} ` + post.css,
+                            __html: `.ui${post._id} {${post.css}} `,
                           }}
                         />
                         <div
                           id="container"
                           className={`card__button-container ${
-                            "red" + post._id
+                            "ui" + post._id
                           }`}
                           dangerouslySetInnerHTML={{ __html: post.html }}
                         ></div>
@@ -242,13 +242,13 @@ function Profile() {
                       >
                         <style
                           dangerouslySetInnerHTML={{
-                            __html: `.${"red" + post._id} ` + post.css,
+                            __html: `.ui${post._id} {${post.css}} `,
                           }}
                         />
                         <div
                           id="container"
                           className={`card__button-container ${
-                            "red" + post._id
+                            "ui" + post._id
                           }`}
                           dangerouslySetInnerHTML={{ __html: post.html }}
                         ></div>
@@ -284,7 +284,7 @@ function Profile() {
               )}
             </section>
           )}
-          {postApproved.length > 0 && (
+          {postApproved.length > 0 ? (
             <section className="content">
               <h3 className="posts-title">
                 {/* <img className="tag-icon" src={timeLineYellow} alt="" /> */}
@@ -354,6 +354,20 @@ function Profile() {
                 </div>
               )}
             </section>
+          ) : (
+            <article className="no-posts-card">
+              <div className="no-posts-card__content">
+                <div className="image-container">
+                  <img className="image" src={planet} alt="" />
+                </div>
+                <h3 className="heading">
+                  It looks like you're new here. Don't be shy, click the
+                  'Create' button and introduce yourself to the rest of the
+                  galaxy.
+                </h3>
+                <p className="paragraph" />
+              </div>
+            </article>
           )}
         </>
       )}

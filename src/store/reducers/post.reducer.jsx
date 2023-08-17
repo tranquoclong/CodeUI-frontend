@@ -1,12 +1,15 @@
 import {
   POST_FAILED,
   POST_SUCCESS,
+  POST_FAVORITE_FAILED,
+  POST_FAVORITE_SUCCESS,
   POST_BY_ID_FAILED,
   POST_BY_ID_SUCCESS,
 } from "../constants/post.const";
 
 const initialState = {
-  post: null,
+  post: {},
+  favoritePost: {},
   postById: null,
 };
 
@@ -17,6 +20,12 @@ const postReducer = (state = initialState, action) => {
       return { ...state, post: payload };
     }
     case POST_FAILED: {
+      return { ...state, errors: payload };
+    }
+    case POST_FAVORITE_SUCCESS: {
+      return { ...state, favoritePost: payload };
+    }
+    case POST_FAVORITE_FAILED: {
       return { ...state, errors: payload };
     }
     case POST_BY_ID_SUCCESS: {

@@ -143,7 +143,10 @@ function Loaders() {
           </div>
         </article>
       </div>
-      <a className="button button--secondary see-more-button" href="/loaders">
+      <a
+        className="button button--secondary see-more-button"
+        href="/elements/spinner"
+      >
         See all loaders
       </a>
     </section>

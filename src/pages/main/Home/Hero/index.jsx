@@ -9,7 +9,7 @@ function Hero() {
           className="product-hunt"
         >
         </a>
-        <h1 className="home-page__heading">
+        <h1 className="home-page__heading" style={{maxWidth: "100%"}}>
           To make your website just a bit more <span>unique</span>
         </h1>
         <h2 className="home-page__subheading">

@@ -153,7 +153,7 @@ function Checkboxes() {
       </div>
       <a
         className="button button--secondary see-more-button"
-        href="/checkboxes"
+        href="/elements/checkbox"
       >
         See all checkboxes
       </a>

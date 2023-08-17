@@ -173,7 +173,10 @@ function Cards() {
           </div>
         </article>
       </div>
-      <a className="button button--secondary see-more-button" href="/buttons">
+      <a
+        className="button button--secondary see-more-button"
+        href="/elements/card"
+      >
         See all cards
       </a>
     </section>

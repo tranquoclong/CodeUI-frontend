@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useIsLogin } from "../hooks/useIsLogin";
 function Sidebar({ history }) {
+  const { isLogin } = useIsLogin();
   const isActive = (history, path) => {
     if (history === path) return "active";
     else return "false";
@@ -64,29 +66,31 @@ function Sidebar({ history }) {
           >
             <div className="tab-content">Inputs</div>
           </Link>
-          <Link
-            className={`tab tab--favorites ${isActive(
-              history,
-              "/elements/favorites"
-            )}`}
-            to="/elements/favorites"
-          >
-            <div className="tab-content">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width={24}
-                height={24}
-              >
-                <path fill="none" d="M0 0h24v24H0z" />
-                <path
-                  fill="currentColor"
-                  d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z"
-                />
-              </svg>
-              My favorites
-            </div>
-          </Link>
+          {isLogin && (
+            <Link
+              className={`tab tab--favorites ${isActive(
+                history,
+                "/elements/favorites"
+              )}`}
+              to="/elements/favorites"
+            >
+              <div className="tab-content">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  width={24}
+                  height={24}
+                >
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path
+                    fill="currentColor"
+                    d="M5 2h14a1 1 0 0 1 1 1v19.143a.5.5 0 0 1-.766.424L12 18.03l-7.234 4.536A.5.5 0 0 1 4 22.143V3a1 1 0 0 1 1-1zm13 2H6v15.432l6-3.761 6 3.761V4z"
+                  />
+                </svg>
+                My favorites
+              </div>
+            </Link>
+          )}
         </nav>
       </div>
     </div>
