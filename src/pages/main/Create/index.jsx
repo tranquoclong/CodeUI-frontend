@@ -22,8 +22,8 @@ function Create() {
   const { hidden, handleClick } = useIsHidden();
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
+  // const [jsText, setJsText] = useState("");
   const { type } = useSelector((state) => state.modal);
-  console.log("🚀 ~ file: index.jsx:26 ~ Create ~ type:", type)
   useEffect(
     () => {
       dispatch({
@@ -76,6 +76,9 @@ function Create() {
   function handleEditorChangeHtml(value, event) {
     setHtmlText(value);
   }
+  // function handleEditorChangeJs(value, event) {
+  //   setJsText(value);
+  // }
   const options = { fontSize: 17 };
   const clickSubmit = () => {
     dispatch(Post(htmlText, cssText, hidden, type, history));
@@ -92,6 +95,7 @@ function Create() {
           className="preview prefix123"
           dangerouslySetInnerHTML={{ __html: htmlText }}
         ></div>
+        {/* <script dangerouslySetInnerHTML={{ __html: jsText }} /> */}
         <div className="preview-controls" />
         <label className="theme-switcher">
           Theme:
@@ -126,7 +130,7 @@ function Create() {
           <div className="user-controls">
             <div className="errors" />
             <div className="buttons">
-              {/* <button className="button button--secondary button--icon">
+              <button className="button button--secondary button--icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
@@ -140,7 +144,7 @@ function Create() {
                   />
                 </svg>
                 Save as a draft
-              </button> */}
+              </button>
               <button
                 className="button button--primary button--icon button--rotated"
                 onClick={clickSubmit}
@@ -176,6 +180,19 @@ function Create() {
           />
         </div>
       </section>
+      {/* <section className="html-editor">
+        <span className="editor-label editor-label--js">Javascript</span>
+        <div className="editor-wrapper editor-wrapper--js">
+          <Editor
+            height="400px"
+            options={options}
+            theme="vs-dark"
+            language="javascript"
+            value={jsText}
+            onChange={handleEditorChangeJs}
+          />
+        </div>
+      </section> */}
     </main>
   );
 }

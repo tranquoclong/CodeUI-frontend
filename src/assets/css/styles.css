@@ -1546,6 +1546,9 @@ kbd {
 .detail-page .editor-label--html {
   background: var(--red);
 }
+.detail-page .editor-label--js {
+  background: var(--gold);
+}
 .detail-page .editor-label.fancy {
   border-bottom: 10px solid #1e1e1e;
 }
