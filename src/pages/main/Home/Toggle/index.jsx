@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Toggle() {
   return (
-    <section className="posts-preview">
+    <section className="posts-preview" style={{ width: "100%" }}>
       <div className="posts-header">
         <a href="/switches">
           <h3 className="preview-heading">Toggle Switches</h3>
@@ -142,6 +142,79 @@ function Toggle() {
               <div
                 id="container"
                 className="card__button-container pVoxybuns-horrible-shrimp-47"
+              >
+                <label className="switch">
+                  <input type="checkbox" />
+                  <span className="slider" />
+                </label>
+              </div>
+            </div>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+                <article className="card card--switch false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  '\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart:before,\n                      .pbarisdogansutcu-tender-dingo-64 #switch {\n                        display: none;\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart,\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart::after {\n                        border-color: hsl(231deg 28% 86%);\n                        border: 1px solid;\n                        border-top-left-radius: 100px;\n                        border-top-right-radius: 100px;\n                        width: 10px;\n                        height: 8px;\n                        border-bottom: 0;\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .round {\n                        position: absolute;\n                        z-index: 1;\n                        width: 8px;\n                        height: 8px;\n                        background: hsl(0deg 0% 100%);\n                        box-shadow: rgb(0 0 0 / 24%) 0px 0px 4px 0px;\n                        border-radius: 100%;\n                        left: 0px;\n                        bottom: -1px;\n                        transition: all 0.5s ease;\n                        animation: check-animation2 0.5s forwards;\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64\n                        input:checked\n                        + label\n                        .round {\n                        transform: translate(0px, 0px);\n                        animation: check-animation 0.5s forwards;\n                        background-color: hsl(0deg 0% 100%);\n                      }\n\n                      @keyframes check-animation {\n                        0% {\n                          transform: translate(0px, 0px);\n                        }\n\n                        50% {\n                          transform: translate(0px, 7px);\n                        }\n\n                        100% {\n                          transform: translate(7px, 7px);\n                        }\n                      }\n\n                      @keyframes check-animation2 {\n                        0% {\n                          transform: translate(7px, 7px);\n                        }\n\n                        50% {\n                          transform: translate(0px, 7px);\n                        }\n\n                        100% {\n                          transform: translate(0px, 0px);\n                        }\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart {\n                        box-sizing: border-box;\n                        position: relative;\n                        transform: rotate(-45deg) translate(-50%, -33px)\n                          scale(4);\n                        display: block;\n                        border-color: hsl(231deg 28% 86%);\n                        cursor: pointer;\n                        top: 0;\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64\n                        input:checked\n                        + .love-heart,\n                      .pbarisdogansutcu-tender-dingo-64\n                        input:checked\n                        + .love-heart::after,\n                      .pbarisdogansutcu-tender-dingo-64\n                        input:checked\n                        + .love-heart\n                        .bottom {\n                        border-color: hsl(347deg 81% 61%);\n                        box-shadow: inset 6px -5px 0px 2px hsl(347deg 99% 72%);\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart::after,\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart .bottom {\n                        content: "";\n                        display: block;\n                        box-sizing: border-box;\n                        position: absolute;\n                        border-color: hsl(231deg 28% 86%);\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart::after {\n                        right: -9px;\n                        transform: rotate(90deg);\n                        top: 7px;\n                      }\n\n                      .pbarisdogansutcu-tender-dingo-64 .love-heart .bottom {\n                        width: 11px;\n                        height: 11px;\n                        border-left: 1px solid;\n                        border-bottom: 1px solid;\n                        border-color: hsl(231deg 28% 86%);\n                        left: -1px;\n                        top: 5px;\n                        border-radius: 0px 0px 0px 5px;\n                      }\n                    ',
+              }}
+            />
+            <div className="clickable-wrapper">
+              <Link className="fake-link" to="/">
+                Link to button
+              </Link>
+              <div
+                id="container"
+                className="card__button-container pbarisdogansutcu-tender-dingo-64"
+              >
+                <div className="love">
+                  <input id="switch" type="checkbox" />
+                  <label className="love-heart" htmlFor="switch">
+                    <i className="left" />
+                    <i className="right" />
+                    <i className="bottom" />
+                    <div className="round" />
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--switch false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  '\n                      .pnamecho-quiet-panther-93 .switch {\n                        --button-width: 3.5em;\n                        --button-height: 2em;\n                        --toggle-diameter: 1.5em;\n                        --button-toggle-offset: calc(\n                          (var(--button-height) - var(--toggle-diameter)) / 2\n                        );\n                        --toggle-shadow-offset: 10px;\n                        --toggle-wider: 3em;\n                        --color-grey: #cccccc;\n                        --color-green: #4296f4;\n                      }\n\n                      .pnamecho-quiet-panther-93 .slider {\n                        display: inline-block;\n                        width: var(--button-width);\n                        height: var(--button-height);\n                        background-color: var(--color-grey);\n                        border-radius: calc(var(--button-height) / 2);\n                        position: relative;\n                        transition: 0.3s all ease-in-out;\n                      }\n\n                      .pnamecho-quiet-panther-93 .slider::after {\n                        content: "";\n                        display: inline-block;\n                        width: var(--toggle-diameter);\n                        height: var(--toggle-diameter);\n                        background-color: #fff;\n                        border-radius: calc(var(--toggle-diameter) / 2);\n                        position: absolute;\n                        top: var(--button-toggle-offset);\n                        transform: translateX(var(--button-toggle-offset));\n                        box-shadow: var(--toggle-shadow-offset) 0\n                          calc(var(--toggle-shadow-offset) * 4)\n                          rgba(0, 0, 0, 0.1);\n                        transition: 0.3s all ease-in-out;\n                      }\n\n                      .pnamecho-quiet-panther-93\n                        .switch\n                        input[type="checkbox"]:checked\n                        + .slider {\n                        background-color: var(--color-green);\n                      }\n\n                      .pnamecho-quiet-panther-93\n                        .switch\n                        input[type="checkbox"]:checked\n                        + .slider::after {\n                        transform: translateX(\n                          calc(\n                            var(--button-width) - var(--toggle-diameter) -\n                              var(--button-toggle-offset)\n                          )\n                        );\n                        box-shadow: calc(var(--toggle-shadow-offset) * -1) 0\n                          calc(var(--toggle-shadow-offset) * 4)\n                          rgba(0, 0, 0, 0.1);\n                      }\n\n                      .pnamecho-quiet-panther-93\n                        .switch\n                        input[type="checkbox"] {\n                        display: none;\n                      }\n\n                      .pnamecho-quiet-panther-93\n                        .switch\n                        input[type="checkbox"]:active\n                        + .slider::after {\n                        width: var(--toggle-wider);\n                      }\n\n                      .pnamecho-quiet-panther-93\n                        .switch\n                        input[type="checkbox"]:checked:active\n                        + .slider::after {\n                        transform: translateX(\n                          calc(\n                            var(--button-width) - var(--toggle-wider) -\n                              var(--button-toggle-offset)\n                          )\n                        );\n                      }\n                    ',
+              }}
+            />
+            <div className="clickable-wrapper">
+              <Link className="fake-link" to="/">
+                Link to button
+              </Link>
+              <div
+                id="container"
+                className="card__button-container pnamecho-quiet-panther-93"
               >
                 <label className="switch">
                   <input type="checkbox" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Inputs() {
   return (
-    <section className="posts-preview">
+    <section className="posts-preview" style={{ width: "100%" }}>
       <div className="posts-header">
         <a href="/inputs">
           <h3 className="preview-heading">Inputs</h3>
@@ -201,6 +201,90 @@ function Inputs() {
                     </g>
                   </svg>
                   <input placeholder="Search" type="search" className="input" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--input dark-background false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  "\n                      .pliyaxu123-warm-eel-62 .form-control {\n                        position: relative;\n                        margin: 20px 0 40px;\n                        width: 190px;\n                      }\n\n                      .pliyaxu123-warm-eel-62 .form-control input {\n                        background-color: transparent;\n                        border: 0;\n                        border-bottom: 2px #fff solid;\n                        display: block;\n                        width: 100%;\n                        padding: 15px 0;\n                        font-size: 18px;\n                        color: #fff;\n                      }\n\n                      .pliyaxu123-warm-eel-62 .form-control input:focus,\n                      .pliyaxu123-warm-eel-62 .form-control input:valid {\n                        outline: 0;\n                        border-bottom-color: lightblue;\n                      }\n\n                      .pliyaxu123-warm-eel-62 .form-control label {\n                        position: absolute;\n                        top: 15px;\n                        left: 0;\n                        pointer-events: none;\n                      }\n\n                      .pliyaxu123-warm-eel-62 .form-control label span {\n                        display: inline-block;\n                        font-size: 18px;\n                        min-width: 5px;\n                        color: #fff;\n                        transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);\n                      }\n\n                      .pliyaxu123-warm-eel-62\n                        .form-control\n                        input:focus\n                        + label\n                        span,\n                      .pliyaxu123-warm-eel-62\n                        .form-control\n                        input:valid\n                        + label\n                        span {\n                        color: lightblue;\n                        transform: translateY(-30px);\n                      }\n                    ",
+              }}
+            />
+            <div className="clickable-wrapper">
+              <Link className="fake-link" to="/">
+                Link to button
+              </Link>
+              <div
+                id="container"
+                className="card__button-container pliyaxu123-warm-eel-62"
+              >
+                <div className="form-control">
+                  <input type="value" required />
+                  <label>
+                    <span style={{ transitionDelay: "0ms" }}>U</span>
+                    <span style={{ transitionDelay: "50ms" }}>s</span>
+                    <span style={{ transitionDelay: "100ms" }}>e</span>
+                    <span style={{ transitionDelay: "150ms" }}>r</span>
+                    <span style={{ transitionDelay: "200ms" }}>n</span>
+                    <span style={{ transitionDelay: "250ms" }}>a</span>
+                    <span style={{ transitionDelay: "300ms" }}>m</span>
+                    <span style={{ transitionDelay: "350ms" }}>e</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--input false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  "\n                      .palexruix-jolly-emu-80 .input {\n                        max-width: 190px;\n                        height: 44px;\n                        background-color: #05060f0a;\n                        border-radius: 0.5rem;\n                        padding: 0 1rem;\n                        border: 2px solid transparent;\n                        font-size: 1rem;\n                        transition: border-color 0.3s\n                            cubic-bezier(0.25, 0.01, 0.25, 1) 0s,\n                          color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1) 0s,\n                          background 0.2s cubic-bezier(0.25, 0.01, 0.25, 1) 0s;\n                      }\n\n                      .palexruix-jolly-emu-80 .label {\n                        display: block;\n                        margin-bottom: 0.3rem;\n                        font-size: 0.9rem;\n                        font-weight: bold;\n                        color: #05060f99;\n                        transition: color 0.3s cubic-bezier(0.25, 0.01, 0.25, 1)\n                          0s;\n                      }\n\n                      .palexruix-jolly-emu-80 .input:hover,\n                      .palexruix-jolly-emu-80 .input:focus,\n                      .palexruix-jolly-emu-80 .input-group:hover .input {\n                        outline: none;\n                        border-color: #05060f;\n                      }\n\n                      .palexruix-jolly-emu-80 .input-group:hover .label,\n                      .palexruix-jolly-emu-80 .input:focus {\n                        color: #05060fc2;\n                      }\n                    ",
+              }}
+            />
+            <div className="clickable-wrapper">
+              <Link className="fake-link" to="/">
+                Link to button
+              </Link>
+              <div
+                id="container"
+                className="card__button-container palexruix-jolly-emu-80"
+              >
+                <div className="input-group">
+                  <label className="label">Email address</label>
+                  <input
+                    autoComplete="off"
+                    name="Email"
+                    id="Email"
+                    className="input"
+                    type="email"
+                  />
+                  <div />
                 </div>
               </div>
             </div>

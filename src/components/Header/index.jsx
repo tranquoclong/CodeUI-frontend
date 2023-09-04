@@ -8,10 +8,10 @@ import { LOGIN_SUCCESS } from "../../store/constants/user.const";
 import Menu from "./Menu";
 import logo from "../../assets/images/logo.png";
 import Notification from "./Notifications/index";
+// import Element from './../../pages/main/Element/index';
 
 function Header() {
   const history = window.location.pathname;
-  const CLIENT_ID = "fac8f66eb69598dd2c8b";
   const dispatch = useDispatch();
   const { isLogin } = useIsLogin();
   useEffect(() => {
@@ -40,7 +40,8 @@ function Header() {
 
   const loginWithGithub = () => {
     window.location.assign(
-      "https://github.com/login/oauth/authorize?client_id=" + CLIENT_ID
+      "https://github.com/login/oauth/authorize?client_id=" +
+        process.env.CLIENT_ID
     );
   };
   function handleLogout(e) {
@@ -74,7 +75,7 @@ function Header() {
             }`}
             to="/elements/all"
           >
-            Browse
+            Elements
           </Link>
           <Link
             className={`hover-underline-animation ${

@@ -1,24 +1,18 @@
 import React from "react";
-import Buttons from "./Buttons";
-import Cards from "./Cards";
-import Checkboxes from "./Checkboxes";
 import Hero from "./Hero";
-import Inputs from "./Inputs";
-import Loaders from "./Loaders";
-// import Stat from "./Stat";
-import Toggle from "./Toggle";
+import Stat from "./Stat";
+import TopCreate from "./TopCreate";
+import TopElement from "./TopElement";
+import Supporters from "./Supporters";
 
 function Home() {
   return (
     <div className="home-page">
       <Hero />
-      {/* <Stat /> */}
-      <Buttons />
-      <Loaders />
-      <Checkboxes />
-      <Toggle />
-      <Inputs />
-      <Cards />
+      <Stat />
+      <TopCreate/>
+      <TopElement/>
+      <Supporters />
     </div>
   );
 }

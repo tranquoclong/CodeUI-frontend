@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Cards() {
   return (
-    <section className="posts-preview">
+    <section className="posts-preview" style={{ width: "100%" }}>
       <div className="posts-header">
         <a href="/cards">
           <h3 className="preview-heading">Cards</h3>
@@ -162,6 +162,84 @@ function Cards() {
                 className="card__button-container padamgiebl-strong-zebra-87"
               >
                 <div className="card" />
+              </div>
+            </Link>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--card false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  "\n                      .padamgiebl-blue-mole-92 .card {\n                        position: relative;\n                        width: 190px;\n                        height: 254px;\n                        background: lightgrey;\n                        box-shadow: #d11bff42 0 15px 40px -5px;\n                        z-index: 1;\n                        border-radius: 21px;\n                        overflow: hidden;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card__content {\n                        background: linear-gradient(\n                          rgba(255, 255, 255, 0.473),\n                          rgba(150, 150, 150, 0.25)\n                        );\n                        z-index: 1;\n                        backdrop-filter: blur(20px);\n                        -webkit-backdrop-filter: blur(20px);\n                        position: absolute;\n                        left: 0;\n                        top: 0;\n                        width: 100%;\n                        height: 100%;\n                        border-radius: 21px;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob {\n                        position: absolute;\n                        z-index: -1;\n                        border-radius: 5em;\n                        width: 200px;\n                        height: 200px;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(2) {\n                        left: -50px;\n                        top: -90px;\n                        background: #ff930f;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(3) {\n                        left: 110px;\n                        top: -20px;\n                        z-index: -1;\n                        background: #bf0fff;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(4) {\n                        left: -40px;\n                        top: 100px;\n                        background: #ff1b6b;\n                      }\n\n                      .padamgiebl-blue-mole-92 .card .blob:nth-child(5) {\n                        left: 100px;\n                        top: 180px;\n                        background: #0061ff;\n                      }",
+              }}
+            />
+            <Link className="clickable-wrapper" to="/">
+              <div
+                id="container"
+                className="card__button-container padamgiebl-blue-mole-92"
+              >
+                <div className="card">
+                  <div className="card__content" />
+                  <div className="blob" />
+                  <div className="blob" />
+                  <div className="blob" />
+                  <div className="blob" />
+                </div>
+              </div>
+            </Link>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--card false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  "\n                      .palexruix-moody-goose-93 .card {\n                        width: 190px;\n                        height: 254px;\n                        padding: 0.8em;\n                        background: #f5f5f5;\n                        position: relative;\n                        overflow: visible;\n                        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12),\n                          0 1px 2px rgba(0, 0, 0, 0.24);\n                      }\n\n                      .palexruix-moody-goose-93 .card-img {\n                        background-color: #ffcaa6;\n                        height: 40%;\n                        width: 100%;\n                        border-radius: 0.5rem;\n                        transition: 0.3s ease;\n                      }\n\n                      .palexruix-moody-goose-93 .card-info {\n                        padding-top: 10%;\n                      }\n\n                      .palexruix-moody-goose-93 svg {\n                        width: 20px;\n                        height: 20px;\n                      }\n\n                      .palexruix-moody-goose-93 .card-footer {\n                        width: 100%;\n                        display: flex;\n                        justify-content: space-between;\n                        align-items: center;\n                        padding-top: 10px;\n                        border-top: 1px solid #ddd;\n                      }\n\n                      /*Text*/\n                      .palexruix-moody-goose-93 .text-title {\n                        font-weight: 900;\n                        font-size: 1.2em;\n                        line-height: 1.5;\n                      }\n\n                      .palexruix-moody-goose-93 .text-body {\n                        font-size: 0.9em;\n                        padding-bottom: 10px;\n                      }\n\n                      /*Button*/\n                      .palexruix-moody-goose-93 .card-button {\n                        border: 1px solid #252525;\n                        display: flex;\n                        padding: 0.3em;\n                        cursor: pointer;\n                        border-radius: 50px;\n                        transition: 0.3s ease-in-out;\n                      }\n\n                      /*Hover*/\n                      .palexruix-moody-goose-93 .card-img:hover {\n                        transform: translateY(-25%);\n                        box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px,\n                          rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;\n                      }\n\n                      .palexruix-moody-goose-93 .card-button:hover {\n                        border: 1px solid #ffcaa6;\n                        background-color: #ffcaa6;\n                      }",
+              }}
+            />
+            <Link className="clickable-wrapper" to="/">
+              <div
+                id="container"
+                className="card__button-container palexruix-moody-goose-93"
+              >
+                <div className="card">
+                  <div className="card-img" />
+                  <div className="card-info">
+                    <p className="text-title">Product title</p>
+                    <p className="text-body">Product description and details</p>
+                  </div>
+                  <div className="card-footer">
+                    <span className="text-title">$499.49</span>
+                    <div className="card-button">
+                      <svg className="svg-icon" viewBox="0 0 20 20">
+                        <path d="M17.72,5.011H8.026c-0.271,0-0.49,0.219-0.49,0.489c0,0.271,0.219,0.489,0.49,0.489h8.962l-1.979,4.773H6.763L4.935,5.343C4.926,5.316,4.897,5.309,4.884,5.286c-0.011-0.024,0-0.051-0.017-0.074C4.833,5.166,4.025,4.081,2.33,3.908C2.068,3.883,1.822,4.075,1.795,4.344C1.767,4.612,1.962,4.853,2.231,4.88c1.143,0.118,1.703,0.738,1.808,0.866l1.91,5.661c0.066,0.199,0.252,0.333,0.463,0.333h8.924c0.116,0,0.22-0.053,0.308-0.128c0.027-0.023,0.042-0.048,0.063-0.076c0.026-0.034,0.063-0.058,0.08-0.099l2.384-5.75c0.062-0.151,0.046-0.323-0.045-0.458C18.036,5.092,17.883,5.011,17.72,5.011z" />
+                        <path d="M8.251,12.386c-1.023,0-1.856,0.834-1.856,1.856s0.833,1.853,1.856,1.853c1.021,0,1.853-0.83,1.853-1.853S9.273,12.386,8.251,12.386z M8.251,15.116c-0.484,0-0.877-0.393-0.877-0.874c0-0.484,0.394-0.878,0.877-0.878c0.482,0,0.875,0.394,0.875,0.878C9.126,14.724,8.733,15.116,8.251,15.116z" />
+                        <path d="M13.972,12.386c-1.022,0-1.855,0.834-1.855,1.856s0.833,1.853,1.855,1.853s1.854-0.83,1.854-1.853S14.994,12.386,13.972,12.386z M13.972,15.116c-0.484,0-0.878-0.393-0.878-0.874c0-0.484,0.394-0.878,0.878-0.878c0.482,0,0.875,0.394,0.875,0.878C14.847,14.724,14.454,15.116,13.972,15.116z" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
               </div>
             </Link>
           </div>

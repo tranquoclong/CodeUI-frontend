@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 function Buttons() {
   return (
-    <section className="posts-preview">
+    <section className="posts-preview" style={{ width: "100%" }}>
       <div className="posts-header">
         <a href="/buttons">
           <h3 className="preview-heading">Buttons</h3>
@@ -148,6 +148,69 @@ function Buttons() {
                     </div>
                   </div>
                   Continue Application
+                </button>
+              </div>
+            </Link>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--button false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  '\n                      .pcssbuttons-io-massive-mayfly-74 button {\n                        position: relative;\n                        display: inline-block;\n                        cursor: pointer;\n                        outline: none;\n                        border: 0;\n                        vertical-align: middle;\n                        text-decoration: none;\n                        background: transparent;\n                        padding: 0;\n                        font-size: inherit;\n                        font-family: inherit;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74 button.learn-more {\n                        width: 12rem;\n                        height: auto;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button.learn-more\n                        .circle {\n                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);\n                        position: relative;\n                        display: block;\n                        margin: 0;\n                        width: 3rem;\n                        height: 3rem;\n                        background: #282936;\n                        border-radius: 1.625rem;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button.learn-more\n                        .circle\n                        .icon {\n                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);\n                        position: absolute;\n                        top: 0;\n                        bottom: 0;\n                        margin: auto;\n                        background: #fff;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button.learn-more\n                        .circle\n                        .icon.arrow {\n                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);\n                        left: 0.625rem;\n                        width: 1.125rem;\n                        height: 0.125rem;\n                        background: none;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button.learn-more\n                        .circle\n                        .icon.arrow::before {\n                        position: absolute;\n                        content: "";\n                        top: -0.29rem;\n                        right: 0.0625rem;\n                        width: 0.625rem;\n                        height: 0.625rem;\n                        border-top: 0.125rem solid #fff;\n                        border-right: 0.125rem solid #fff;\n                        transform: rotate(45deg);\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button.learn-more\n                        .button-text {\n                        transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);\n                        position: absolute;\n                        top: 0;\n                        left: 0;\n                        right: 0;\n                        bottom: 0;\n                        padding: 0.75rem 0;\n                        margin: 0 0 0 1.85rem;\n                        color: #282936;\n                        font-weight: 700;\n                        line-height: 1.6;\n                        text-align: center;\n                        text-transform: uppercase;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74 button:hover .circle {\n                        width: 100%;\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button:hover\n                        .circle\n                        .icon.arrow {\n                        background: #fff;\n                        transform: translate(1rem, 0);\n                      }\n\n                      .pcssbuttons-io-massive-mayfly-74\n                        button:hover\n                        .button-text {\n                        color: #fff;\n                      }',
+              }}
+            />
+            <Link className="clickable-wrapper" to="/">
+              <div
+                id="container"
+                className="card__button-container pcssbuttons-io-massive-mayfly-74"
+              >
+                <button className="learn-more">
+                  <span className="circle" aria-hidden="true">
+                    <span className="icon arrow" />
+                  </span>
+                  <span className="button-text">Learn More</span>
+                </button>
+              </div>
+            </Link>
+          </div>
+          <div className="card__footer">
+            <a href="/profile">
+              <span className="card__nickname text-color">Creator</span>
+            </a>
+            <div className="card__views">1000K views</div>
+          </div>
+        </article>
+        <article className="card card--button false false">
+          <div className="card-content">
+            <Link className="get-html-css" to="/">
+              Get <span className="html">HTML</span> &amp;
+              <span className="css">CSS</span>
+            </Link>
+            <style
+              dangerouslySetInnerHTML={{
+                __html:
+                  "\n                      .pVoxybuns-lucky-fireant-71 button {\n                        /* Variables */\n                        --button_radius: 0.75em;\n                        --button_color: #e8e8e8;\n                        --button_outline_color: #000000;\n                        font-size: 17px;\n                        font-weight: bold;\n                        border: none;\n                        border-radius: var(--button_radius);\n                        background: var(--button_outline_color);\n                      }\n\n                      .pVoxybuns-lucky-fireant-71 .button_top {\n                        display: block;\n                        box-sizing: border-box;\n                        border: 2px solid var(--button_outline_color);\n                        border-radius: var(--button_radius);\n                        padding: 0.75em 1.5em;\n                        background: var(--button_color);\n                        color: var(--button_outline_color);\n                        transform: translateY(-0.2em);\n                        transition: transform 0.1s ease;\n                      }\n\n                      .pVoxybuns-lucky-fireant-71 button:hover .button_top {\n                        /* Pull the button upwards when hovered */\n                        transform: translateY(-0.33em);\n                      }\n\n                      .pVoxybuns-lucky-fireant-71 button:active .button_top {\n                        /* Push the button downwards when pressed */\n                        transform: translateY(0);\n                      }",
+              }}
+            />
+            <Link className="clickable-wrapper" to="/">
+              <div
+                id="container"
+                className="card__button-container pVoxybuns-lucky-fireant-71"
+              >
+                <button>
+                  <span className="button_top"> Button </span>
                 </button>
               </div>
             </Link>

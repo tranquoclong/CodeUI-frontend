@@ -3,6 +3,7 @@ import Editor from "@monaco-editor/react";
 import { useIsHidden } from "../../../hooks/useIsHidden";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import $ from "jquery";
 import { Post } from "../../../store/actions/post.action";
 import { OPEN_MODAL } from "../../../store/constants/modal.const";
 import PostStatusModal from "../../../components/Modal/postStatusModal";
@@ -15,14 +16,17 @@ import {
   defaultSpinnerCSS,
   defaultSwitchCSS,
 } from "./defaultCSS";
-
 function Create() {
   const dispatch = useDispatch();
   const history = useHistory();
   const { hidden, handleClick } = useIsHidden();
   const [cssText, setCssText] = useState("");
   const [htmlText, setHtmlText] = useState("");
-  // const [jsText, setJsText] = useState("");
+  const [jsText, setJsText] = useState(
+    ` var iframe = document.getElementsByClassName("button")[0];   
+function myFunction() {iframe.style.color = "red";}`
+  );
+   const [srcDoc, setSrcDoc] = useState("");
   const { type } = useSelector((state) => state.modal);
   useEffect(
     () => {
@@ -76,13 +80,36 @@ function Create() {
   function handleEditorChangeHtml(value, event) {
     setHtmlText(value);
   }
-  // function handleEditorChangeJs(value, event) {
-  //   setJsText(value);
-  // }
+  function handleEditorChangeJs(value, event) {
+    setJsText(value);
+  }
   const options = { fontSize: 17 };
   const clickSubmit = () => {
     dispatch(Post(htmlText, cssText, hidden, type, history));
   };
+  // useEffect(() => {
+  //   var contents = $("iframe").contents(),
+  //     body = contents.find("body"),
+  //     styleTag = contents.find("head");
+  //   $("#html").keyup(function () {
+  //     var $this = $(this);
+  //     body.html(htmlText);
+  //   });
+  //   // body.html(`${htmlText} <script async >${jsText}</script>`);
+  //   styleTag.html(`<style>${cssText}</style>`);
+  // }, [htmlText]);
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        setSrcDoc(`
+        <html>
+          <body>${htmlText}</body>
+          <style>${cssText}</style>
+          <script>${jsText}</script>
+        </html>
+     `);
+      }, 250);
+      return () => clearTimeout(timeout);
+    }, [htmlText, cssText, jsText]);
   return (
     <main className="wrapper detail-page create-page">
       <div
@@ -90,12 +117,28 @@ function Create() {
           hidden ? "dark-preview" : "light-preview"
         }`}
       >
-        <style dangerouslySetInnerHTML={{ __html: ".prefix123 " + cssText }} />
-        <div
-          className="preview prefix123"
-          dangerouslySetInnerHTML={{ __html: htmlText }}
-        ></div>
-        {/* <script dangerouslySetInnerHTML={{ __html: jsText }} /> */}
+        <iframe
+          srcDoc={srcDoc}
+          title="review"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+        ></iframe>
+        {/* <script>
+          document.getElementsByClassName("button")[0].style.color = "blue";
+        </script> */}
+        {/* <html>
+          <style
+            dangerouslySetInnerHTML={{ __html: ".prefix123 " + cssText }}
+          />
+          <body>
+            <div
+              className="preview prefix123"
+              dangerouslySetInnerHTML={{ __html: htmlText }}
+            ></div>
+            <script dangerouslySetInnerHTML={{ __html: jsText }} />
+          </body>
+        </html> */}
         <div className="preview-controls" />
         <label className="theme-switcher">
           Theme:
@@ -180,10 +223,11 @@ function Create() {
           />
         </div>
       </section>
-      {/* <section className="html-editor">
+      <section className="html-editor">
         <span className="editor-label editor-label--js">Javascript</span>
         <div className="editor-wrapper editor-wrapper--js">
           <Editor
+            // id="html"
             height="400px"
             options={options}
             theme="vs-dark"
@@ -192,7 +236,7 @@ function Create() {
             onChange={handleEditorChangeJs}
           />
         </div>
-      </section> */}
+      </section>
     </main>
   );
 }
