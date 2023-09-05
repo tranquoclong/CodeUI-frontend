@@ -1,5 +1,6 @@
 import React from "react";
 // import points from "../../../../assets/images/logoCover.png";
+import { Link } from 'react-router-dom';
 function Supporters() {
   return (
     <div className="supporters-section creators-section">
@@ -10,7 +11,7 @@ function Supporters() {
       </div>
       <h2 className="supporters-section__heading">Supporters</h2>
       <section className="supporters creators">
-        <a className="creator" href="/profile/">
+        <Link className="creator" to="/profile/tranquoclong">
           <img
             className="avatar"
             src="https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-1/245404670_615947496201936_748824372943985183_n.jpg?stp=dst-jpg_p200x200&_nc_cat=101&ccb=1-7&_nc_sid=fe8171&_nc_ohc=sDEIZN877LcAX-FOS4j&_nc_ht=scontent.fsgn2-4.fna&oh=00_AfBcOI5ZD5t9sa5wVIwybkMyXMt0kf0nUxTR_zq-RktTyg&oe=64FA4AA3"
@@ -21,8 +22,8 @@ function Supporters() {
           <div className="number-of-posts">
             <span className="button button--sup">PRO</span>
           </div>
-        </a>
-        <a className="creator" href="/profile/">
+        </Link>
+        <Link className="creator" to="/profile/tranquoclong">
           <img
             className="avatar"
             src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-1/323459067_840900486990395_2975645660132593752_n.jpg?stp=c0.0.200.200a_cp6_dst-jpg_p200x200&_nc_cat=105&ccb=1-7&_nc_sid=fe8171&_nc_ohc=XzhKaXy41gEAX8oD3Yd&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfAGuANoa8V0gJmEApYmLVw_3FUmK_DuzV9VAxWKlRkJfA&oe=64FBAD85"
@@ -33,8 +34,8 @@ function Supporters() {
           <div className="number-of-posts">
             <span className="button button--sup">PRO</span>
           </div>
-        </a>
-        <a className="creator" href="/profile/">
+        </Link>
+        <Link className="creator" to="/profile/tranquoclong">
           <img
             className="avatar"
             src="https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-1/368028777_2506915439471300_3838201504797734039_n.jpg?stp=dst-jpg_p200x200&_nc_cat=103&ccb=1-7&_nc_sid=fe8171&_nc_ohc=3d_7x0FI1CwAX8HlfWv&_nc_ht=scontent.fsgn2-9.fna&oh=00_AfDtlW87TOzQ8UmhT4NwbMt4zFPMn8-L6Yp_xQkBGcqvxg&oe=64FB4E2F"
@@ -45,8 +46,8 @@ function Supporters() {
           <div className="number-of-posts">
             <span className="button button--sup">PRO</span>
           </div>
-        </a>
-        <a className="creator" href="/profile/">
+        </Link>
+        <Link className="creator" to="/profile/tranquoclong">
           <img
             className="avatar"
             src="https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-1/371336062_2323520914511852_3284956519508362966_n.jpg?stp=c0.0.200.200a_dst-jpg_p200x200&_nc_cat=108&ccb=1-7&_nc_sid=6e0f69&_nc_ohc=cPy_iJ5gyQsAX83s_y3&_nc_ht=scontent.fsgn2-7.fna&oh=00_AfCT_pfz_i1f7w20i67rACHL2U4nu9GzkXMzs_u1Lg5wWw&oe=64F9FF0E"
@@ -57,11 +58,11 @@ function Supporters() {
           <div className="number-of-posts">
             <span className="button button--sup">PRO</span>
           </div>
-        </a>
+        </Link>
       </section>
-      <a className="button sup-button" href="/all">
+      <Link className="button sup-button" to="/creators">
         Become a supporter
-      </a>
+      </Link>
     </div>
   );
 }

@@ -157,7 +157,7 @@ function Toggle() {
             <div className="card__views">1000K views</div>
           </div>
         </article>
-                <article className="card card--switch false false">
+        <article className="card card--switch false false">
           <div className="card-content">
             <Link className="get-html-css" to="/">
               Get <span className="html">HTML</span> &amp;
@@ -231,12 +231,12 @@ function Toggle() {
           </div>
         </article>
       </div>
-      <a
+      <Link
         className="button button--secondary see-more-button"
-        href="/elements/switch"
+        to="/elements/switch"
       >
         See all toggle switches
-      </a>
+      </Link>
     </section>
   );
 }

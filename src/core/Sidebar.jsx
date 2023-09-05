@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useIsLogin } from "../hooks/useIsLogin";
-function Sidebar({ history }) {
+function Sidebar() {
+  const history = window.location.pathname;
   const { isLogin } = useIsLogin();
   const isActive = (history, path) => {
     if (history === path) return "active";

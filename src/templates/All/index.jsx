@@ -9,7 +9,7 @@ function AllTemplate(props) {
     <>
       <Header />
       <div className="root-container root-container--with-navigation">
-        <Sidebar history={props.path} />
+        <Sidebar/>
         <div className="outlet-wrapper">{props.children}</div>
       </div>
       <Footer />

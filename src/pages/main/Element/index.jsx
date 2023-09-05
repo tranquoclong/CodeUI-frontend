@@ -6,9 +6,11 @@ function Element() {
   return (
     <main className="category-page">
       <div className="category-hero">
-        <h1 className="category-title">Browse {element}</h1>
+        <h1 className="category-title">Elements {element}</h1>
         <p className="category-description">
-          Open-Source {element} made with HTML and CSS
+          Open-Source {element} made with{" "}
+          <span className="bgTextRed">HTML</span> and{" "}
+          <span className="bgTextBlue">CSS</span>
         </p>
       </div>
       <div className="filters-container">

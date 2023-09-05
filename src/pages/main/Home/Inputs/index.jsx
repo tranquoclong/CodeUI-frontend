@@ -297,12 +297,12 @@ function Inputs() {
           </div>
         </article>
       </div>
-      <a
+      <Link
         className="button button--secondary see-more-button"
-        href="/elements/input"
+        to="/elements/input"
       >
         See all inputs
-      </a>
+      </Link>
     </section>
   );
 }

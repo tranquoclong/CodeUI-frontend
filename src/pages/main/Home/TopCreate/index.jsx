@@ -1,5 +1,6 @@
 import React from "react";
 import points from "../../../../assets/images/logoCover.png";
+import { Link } from 'react-router-dom';
 function TopCreate() {
   return (
     <div className="creators-section">
@@ -10,7 +11,7 @@ function TopCreate() {
       </div>
       <h2 className="creators-section__heading">Top Creators</h2>
       <section className="creators">
-        <a className="creator" href="/profile/alexruix">
+        <Link className="creator" to="/creators">
           <span className="rank">1</span>
           <img
             className="avatar"
@@ -26,8 +27,8 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
-        <a className="creator" href="/profile/andrew-demchenk0">
+        </Link>
+        <Link className="creator" to="/creators">
           <span className="rank">2</span>
           <img
             className="avatar"
@@ -43,8 +44,8 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
-        <a className="creator" href="/profile/Yaya12085">
+        </Link>
+        <Link className="creator" to="/creators">
           <span className="rank">3</span>
           <img
             className="avatar"
@@ -60,8 +61,8 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
-        <a className="creator" href="/profile/Nawsome">
+        </Link>
+        <Link className="creator" to="/creators">
           <span className="rank">4</span>
           <img
             className="avatar"
@@ -77,8 +78,8 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
-        <a className="creator" href="/profile/Praashoo7">
+        </Link>
+        <Link className="creator" to="/creators">
           <span className="rank">5</span>
           <img
             className="avatar"
@@ -94,8 +95,8 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
-        <a className="creator" href="/profile/Name">
+        </Link>
+        <Link className="creator" to="/creators">
           <span className="rank">6</span>
           <img
             className="avatar"
@@ -111,11 +112,11 @@ function TopCreate() {
           <div className="points-tag">
             <img src={points} alt="" /> 100
           </div>
-        </a>
+        </Link>
       </section>
-      <a className="button cre-button" href="/all">
+      <Link className="button cre-button" to="/creators">
         See all Creator
-      </a>
+      </Link>
     </div>
   );
 }

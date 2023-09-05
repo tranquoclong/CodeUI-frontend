@@ -79,7 +79,7 @@ function Creators() {
           "not found"
         )}
       </section>
-      {/* <button className="button button--secondary">Show top 50</button> */}
+      <button className="button cre-button">See all Creator</button>
     </div>
   );
 }

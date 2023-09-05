@@ -223,12 +223,12 @@ function Buttons() {
           </div>
         </article>
       </div>
-      <a
+      <Link
         className="button button--secondary see-more-button"
-        href="/elements/button"
+        to="/elements/button"
       >
         See all buttons
-      </a>
+      </Link>
     </section>
   );
 }

@@ -219,12 +219,12 @@ function Checkboxes() {
           </div>
         </article>
       </div>
-      <a
+      <Link
         className="button button--secondary see-more-button"
-        href="/elements/checkbox"
+        to="/elements/checkbox"
       >
         See all checkboxes
-      </a>
+      </Link>
     </section>
   );
 }
