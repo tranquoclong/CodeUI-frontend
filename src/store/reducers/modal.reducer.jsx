@@ -2,6 +2,7 @@ import {
   CLOSE_MODAL,
   OPEN_MODAL,
   MODAL_STATUS,
+  MODAL_LOGIN,
 } from "../constants/modal.const";
 
 const initialState = {
@@ -24,6 +25,11 @@ export const modalReducer = (state = initialState, action) => {
         isOpen: false,
       };
     case MODAL_STATUS:
+      return {
+        ...state,
+        type: payload,
+      };
+    case MODAL_LOGIN:
       return {
         ...state,
         type: payload,

@@ -18,7 +18,7 @@ function PostStatusModal() {
     });
   };
   return (
-    <div className="options-modal">
+    <div className="customModal--options options-modal">
       <h3 className="heading">What are you making?</h3>
       <div className="options">
         <label className={`option ${type === "button" ? "active" : "false"}`}>
