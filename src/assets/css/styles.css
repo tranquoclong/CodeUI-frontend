@@ -2633,11 +2633,11 @@ kbd {
   gap: 10px;
 }
 .options-modal .options .option {
-  background: #fafafa;
+  background: #212121;
   border-radius: var(--border-radius);
   padding: 30px 0;
   flex: 1 1 0px;
-  border: 2px solid var(--lightgray);
+  border: 2px solid var(--grey);
   display: flex;
   flex-direction: column;
   min-width: 130px;
@@ -2645,7 +2645,7 @@ kbd {
   justify-content: space-between;
 }
 .options-modal .options .option svg {
-  color: #dcdcdc;
+  color: #737373;
   margin-bottom: 10px;
   transition: color 0.3s ease-in-out;
 }

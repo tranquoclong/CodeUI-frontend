@@ -41,10 +41,13 @@ function Header() {
   }, []);
 
   const loginWithGithub = () => {
-    window.location.assign(
-      "https://github.com/login/oauth/authorize?client_id=" +
-        process.env.CLIENT_ID
-    );
+    // window.location.assign(
+    //   "https://github.com/login/oauth/authorize?client_id=" +
+    //     process.env.CLIENT_ID
+    // );
+     window.location.assign(
+       "https://github.com/login/oauth/authorize?client_id=fac8f66eb69598dd2c8b"
+     );
   };
   const onLoginModal =() => {
       dispatch({
